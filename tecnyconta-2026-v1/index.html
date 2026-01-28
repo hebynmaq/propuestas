@@ -91,9 +91,16 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-24 items-center">
                 <!-- Branding Mix: Talentología + Tecnyconta -->
-                <div class="flex items-center gap-6 cursor-pointer" onclick="window.scrollTo(0,0)">
-                    <!-- Logo Talentología SVG Inline -->
-                    <div class="h-12 w-auto flex items-center overflow-visible">
+                <div class="flex items-center gap-3 sm:gap-6 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    
+                    <!-- Cliente: TECNYCONTA primero en móvil -->
+                    <span class="font-heading font-bold text-slate-800 text-lg sm:text-lg order-1 sm:order-3">TECNYCONTA</span>
+                    
+                    <!-- Separador Desktop -->
+                    <span class="text-slate-300 h-8 border-r border-slate-300 hidden sm:block order-2"></span>
+
+                    <!-- Logo Talentología: Segundo en móvil -->
+                    <div class="h-8 sm:h-12 w-auto flex items-center overflow-visible order-2 sm:order-1">
                         <svg height="50" viewBox="0 0 484 80" xmlns="http://www.w3.org/2000/svg" class="h-full w-auto">
                             <defs>
                                 <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -126,11 +133,6 @@
                             <text x="95" y="59" font-family="Poppins, sans-serif" font-size="60" font-weight="bold" fill="#5A4894" letter-spacing="-2.5">talentología</text>
                         </svg>
                     </div>
-                    
-                    <span class="text-slate-300 h-8 border-r border-slate-300 hidden sm:block"></span>
-                    
-                    <!-- Placeholder Cliente -->
-                    <span class="font-heading font-bold text-slate-700 text-lg hidden sm:block">TECNYCONTA</span>
                 </div>
 
                 <!-- Desktop Menu -->
