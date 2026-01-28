@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa Liderazgo 2026 | Talentología & Tecnyconta</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Branding Talentología */
+            --tal-purple: #61408F; 
+            --tal-dark: #50307A;
+            --tal-teal: #3DAA9D;
+            --tal-pink: #E5236A;
+            --tal-yellow: #F89821;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3, h4, .font-heading {
+            font-family: 'Poppins', sans-serif;
+        }
+        .text-tal-purple { color: var(--tal-purple); }
+        .bg-tal-purple { background-color: var(--tal-purple); }
+        .text-tal-teal { color: var(--tal-teal); }
+        
+        .gradient-text {
+            background: linear-gradient(to right, #61408F, #E5236A);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* Fondo: Construcción / Liderazgo / Equipo */
+        .hero-bg {
+            background: linear-gradient(to right, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 50%, rgba(255,255,255,0.1) 100%), url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(97, 64, 143, 0.1), 0 10px 10px -5px rgba(97, 64, 143, 0.04);
+        }
+        
+        /* Estilos específicos para los módulos */
+        .module-card {
+            border-left: 4px solid transparent;
+            transition: all 0.3s ease;
+        }
+        .module-card:hover {
+            border-left-width: 8px;
+            padding-left: 1.5rem;
+        }
+        .module-card.junior:hover { border-left-color: #2563eb; background-color: #eff6ff; }
+        .module-card.senior:hover { border-left-color: #61408F; background-color: #f3e8ff; }
+
+        /* Agenda List Styles */
+        .agenda-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.85rem;
+            color: #475569;
+        }
+        .agenda-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #cbd5e1;
+            font-weight: bold;
+        }
+
+        /* Acordeón */
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] summary ~ * { animation: fadeIn 0.3s ease-in-out; }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(-10px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/95 backdrop-blur-xl z-50 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-24 items-center">
+                <!-- Branding Mix: Talentología + Tecnyconta -->
+                <div class="flex items-center gap-6 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <!-- Logo Talentología SVG Inline -->
+                    <div class="h-12 w-auto flex items-center overflow-visible">
+                        <svg height="50" viewBox="0 0 484 80" xmlns="http://www.w3.org/2000/svg" class="h-full w-auto">
+                            <defs>
+                                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#E5236A;stop-opacity:1"></stop>
+                                    <stop offset="100%" style="stop-color:#C11353;stop-opacity:1"></stop>
+                                </linearGradient>
+                                <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#FDB813;stop-opacity:1"></stop>
+                                    <stop offset="100%" style="stop-color:#F89821;stop-opacity:1"></stop>
+                                </linearGradient>
+                                <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#4DBEAF;stop-opacity:1"></stop>
+                                    <stop offset="100%" style="stop-color:#3DAA9D;stop-opacity:1"></stop>
+                                </linearGradient>
+                                <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#61408F;stop-opacity:1"></stop>
+                                    <stop offset="100%" style="stop-color:#50307A;stop-opacity:1"></stop>
+                                </linearGradient>
+                            </defs>
+                            <g transform="translate(40, 40)">
+                                <g transform="scale(0.8) translate(-50, -50)">
+                                    <g transform="translate(50,50) rotate(45)">
+                                        <rect x="-10" y="-45" width="20" height="40" rx="10" fill="url(#grad1)"></rect>
+                                        <rect x="-10" y="-45" width="20" height="40" rx="10" fill="url(#grad2)" transform="rotate(90)"></rect>
+                                        <rect x="-10" y="-45" width="20" height="40" rx="10" fill="url(#grad3)" transform="rotate(180)"></rect>
+                                        <rect x="-10" y="-45" width="20" height="40" rx="10" fill="url(#grad4)" transform="rotate(270)"></rect>
+                                    </g>
+                                </g>
+                            </g>
+                            <text x="95" y="59" font-family="Poppins, sans-serif" font-size="60" font-weight="bold" fill="#5A4894" letter-spacing="-2.5">talentología</text>
+                        </svg>
+                    </div>
+                    
+                    <span class="text-slate-300 h-8 border-r border-slate-300 hidden sm:block"></span>
+                    
+                    <!-- Placeholder Cliente -->
+                    <span class="font-heading font-bold text-slate-700 text-lg hidden sm:block">TECNYCONTA</span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center gap-1">
+                    <a href="#vision" class="px-4 py-2 text-sm font-semibold text-slate-600 hover:text-[#61408F] rounded-full hover:bg-purple-50 transition-all">El reto</a>
+                    <a href="#tracks" class="px-4 py-2 text-sm font-semibold text-slate-600 hover:text-[#61408F] rounded-full hover:bg-purple-50 transition-all">Itinerarios</a>
+                    <a href="#presupuesto" class="px-4 py-2 text-sm font-semibold text-slate-600 hover:text-[#61408F] rounded-full hover:bg-purple-50 transition-all">Inversión</a>
+                    <a href="#tracks" class="ml-4 px-6 py-2.5 bg-[#61408F] hover:bg-[#50307A] text-white text-sm font-bold rounded-full transition-all shadow-lg shadow-purple-200 transform hover:-translate-y-0.5 flex items-center gap-2">
+                        Ver programa <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center text-slate-900 relative pt-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid md:grid-cols-2 gap-12 items-center">
+            <div class="text-left animate-fade-in">
+                <div class="inline-flex items-center gap-2 px-4 py-1 mb-6 rounded-full bg-purple-50 border border-purple-100">
+                    <span class="w-2 h-2 rounded-full bg-[#E5236A]"></span>
+                    <span class="text-[#61408F] font-semibold text-xs md:text-sm uppercase tracking-wider font-heading">Programa de Desarrollo 2026</span>
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight text-slate-900">
+                    Liderazgo que <br/> <span class="gradient-text">construye equipo.</span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-600 mb-8 md:mb-10 font-light leading-relaxed">
+                    Un plan estructurado para acabar con el "patiburrillo" formativo. Dos velocidades, dos enfoques: consistencia para el líder junior e impacto estratégico para el senior.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#tracks" class="px-8 py-4 bg-[#61408F] hover:bg-[#50307A] text-white rounded-lg font-bold text-lg transition shadow-xl shadow-purple-200 font-heading text-center">
+                        Ver Itinerarios
+                    </a>
+                    <a href="#vision" class="px-8 py-4 bg-white hover:bg-slate-700 border border-slate-200 rounded-lg font-bold text-lg transition font-heading text-center">
+                        ¿Por qué ahora?
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Context / Vision -->
+    <section id="vision" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-[#E5236A] font-bold tracking-wide uppercase text-sm mb-2 font-heading">Diagnóstico de situación</h2>
+                    <h3 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">De la formación aislada al desarrollo continuo</h3>
+                    <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+                        Detectamos la necesidad de ordenar el desarrollo del talento en Tecnyconta. El objetivo 2026 es garantizar que cada perfil reciba exactamente lo que necesita: <strong>herramientas tangibles</strong> para el día a día.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start bg-slate-50 p-4 rounded-xl border border-slate-100">
+                            <div class="bg-red-100 p-2 rounded-lg mr-4 text-red-600 mt-1"><i data-lucide="git-merge" class="w-5 h-5"></i></div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">El problema detectado</h4>
+                                <p class="text-slate-600 text-sm">Heterogeneidad en habilidades básicas y falta de herramientas estratégicas en niveles superiores.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Visual Representation -->
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-[#61408F] to-[#E5236A] rounded-3xl opacity-10 transform rotate-3"></div>
+                    <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-xl relative z-10">
+                        <h4 class="font-bold text-xl mb-6 flex items-center gap-2"><i data-lucide="target" class="text-[#E5236A]"></i> Objetivos 2026</h4>
+                        <ul class="space-y-4">
+                            <li class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-sm">1</div>
+                                <span class="text-slate-700 text-sm font-semibold">Nivel Junior: Consistencia y "Caja de Herramientas".</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-full bg-purple-100 text-[#61408F] flex items-center justify-center font-bold text-sm">2</div>
+                                <span class="text-slate-700 text-sm font-semibold">Nivel Senior: Estrategia y "Centro de Desarrollo".</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DETAILED TRACKS SECTION -->
+    <section id="tracks" class="py-16 md:py-24 bg-slate-50 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-[#61408F] font-bold tracking-wide uppercase text-sm mb-2 font-heading">Itinerarios Diferenciados</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-slate-900">Temario y Metodología</h3>
+            </div>
+
+            <!-- Pre-Requisite Block -->
+            <div class="bg-amber-50 border-l-4 border-amber-400 p-6 rounded-r-xl mb-16 max-w-4xl mx-auto flex items-start gap-4">
+                <div class="bg-amber-100 p-3 rounded-full text-amber-600 flex-shrink-0">
+                    <i data-lucide="scan-search" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg text-amber-900">Fase 0: La Calibración (Requisito Previo)</h4>
+                    <p class="text-amber-800 text-sm mt-1 mb-2">
+                        Antes de iniciar los itinerarios, realizaremos una toma de datos "quirúrgica" con RRHH y Jefes de Planta.
+                    </p>
+                    <ul class="text-xs text-amber-800 space-y-1 list-disc list-inside">
+                        <li>Extracción de casos reales (conversaciones difíciles recientes, conflictos habituales).</li>
+                        <li>Identificación de KPIS a impactar.</li>
+                        <li><strong>Duración:</strong> 4 Horas (Sesión estratégica única).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- LEVEL 1: JUNIOR -->
+            <div class="mb-16">
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="bg-blue-600 text-white p-3 rounded-xl shadow-lg shadow-blue-200">
+                        <i data-lucide="tool" class="w-8 h-8"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-bold text-slate-900">Nivel 1: Herramientas Básicas</h4>
+                        <p class="text-slate-500 text-sm">Enfoque: Carga conceptual clara + Práctica inmediata ("Learning by doing").</p>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Modulo 1.1 -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 module-card junior group">
+                        <div class="flex justify-between items-start mb-4">
+                            <h5 class="font-bold text-lg text-slate-800 group-hover:text-blue-600 transition-colors">1. Bases de la Comunicación</h5>
+                            <span class="bg-slate-100 text-slate-600 text-xs font-bold px-2 py-1 rounded">3 Horas</span>
+                        </div>
+                        <p class="text-slate-600 text-sm mb-4">
+                            Estructuras básicas, axiomas y comunicación no verbal. Salir del "yo pensaba que" para asegurar la transmisión correcta.
+                        </p>
+                        
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 mb-3">
+                            <strong class="text-xs text-blue-600 uppercase block mb-2 tracking-wider">Agenda de la Sesión</strong>
+                            <ul class="agenda-list">
+                                <li><strong>Inicio:</strong> Los 3 filtros de la comunicación y barreras en planta.</li>
+                                <li><strong>Nudo:</strong> Comunicación No Verbal y Escucha Activa (Nivel 1, 2, 3).</li>
+                                <li><strong>Cierre:</strong> Dinámica "El Teléfono Roto Industrial".</li>
+                            </ul>
+                        </div>
+                        <div class="flex items-center gap-2 text-xs font-semibold text-slate-700 mt-2">
+                            <i data-lucide="file-check" class="w-4 h-4 text-green-500"></i>
+                            Entregable: Decálogo de comunicación de turno.
+                        </div>
+                    </div>
+
+                    <!-- Modulo 1.2 -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 module-card junior group">
+                        <div class="flex justify-between items-start mb-4">
+                            <h5 class="font-bold text-lg text-slate-800 group-hover:text-blue-600 transition-colors">2. Gestión de Conflictos</h5>
+                            <span class="bg-slate-100 text-slate-600 text-xs font-bold px-2 py-1 rounded">3 Horas</span>
+                        </div>
+                        <p class="text-slate-600 text-sm mb-4">
+                            Desactivar tensiones antes de que escalen. Diferenciar hechos de interpretaciones para mantener el clima laboral.
+                        </p>
+                         <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 mb-3">
+                            <strong class="text-xs text-blue-600 uppercase block mb-2 tracking-wider">Agenda de la Sesión</strong>
+                            <ul class="agenda-list">
+                                <li><strong>Inicio:</strong> ¿Conflicto o problema? Tipologías.</li>
+                                <li><strong>Nudo:</strong> Posiciones vs. Intereses (El Iceberg).</li>
+                                <li><strong>Cierre:</strong> Roleplay "La queja del operario".</li>
+                            </ul>
+                        </div>
+                        <div class="flex items-center gap-2 text-xs font-semibold text-slate-700 mt-2">
+                            <i data-lucide="file-check" class="w-4 h-4 text-green-500"></i>
+                            Entregable: Protocolo de primera respuesta.
+                        </div>
+                    </div>
+
+                    <!-- Modulo 1.3 -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 module-card junior group">
+                        <div class="flex justify-between items-start mb-4">
+                            <h5 class="font-bold text-lg text-slate-800 group-hover:text-blue-600 transition-colors">3. Gestión del Desempeño</h5>
+                            <span class="bg-blue-100 text-blue-700 text-xs font-bold px-2 py-1 rounded">4 Horas (Intensivo)</span>
+                        </div>
+                        <p class="text-slate-600 text-sm mb-4">
+                            Evolución del módulo 1. Uso de comunicación aplicada a la corrección de conductas, feedback constructivo (SBI) y gestión del potencial.
+                        </p>
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 mb-3">
+                            <strong class="text-xs text-blue-600 uppercase block mb-2 tracking-wider">Agenda de la Sesión</strong>
+                            <ul class="agenda-list">
+                                <li><strong>Inicio:</strong> Diferencia entre opinión, juicio y hecho.</li>
+                                <li><strong>Nudo:</strong> El modelo SBI (Situation-Behavior-Impact).</li>
+                                <li><strong>Cierre:</strong> Práctica de "Conversaciones Difíciles" con casos reales de Tecnyconta.</li>
+                            </ul>
+                        </div>
+                        <div class="flex items-center gap-2 text-xs font-semibold text-slate-700 mt-2">
+                            <i data-lucide="file-check" class="w-4 h-4 text-green-500"></i>
+                            Entregable: Guion personal de Feedback.
+                        </div>
+                    </div>
+
+                    <!-- Modulo 1.4 -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 module-card junior group">
+                        <div class="flex justify-between items-start mb-4">
+                            <h5 class="font-bold text-lg text-slate-800 group-hover:text-blue-600 transition-colors">4. Organización Personal</h5>
+                            <span class="bg-slate-100 text-slate-600 text-xs font-bold px-2 py-1 rounded">3 Horas</span>
+                        </div>
+                        <p class="text-slate-600 text-sm mb-4">Gestión del tiempo y prioridades en un entorno reactivo como la planta/obra.</p>
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 mb-3">
+                            <strong class="text-xs text-blue-600 uppercase block mb-2 tracking-wider">Agenda de la Sesión</strong>
+                            <ul class="agenda-list">
+                                <li><strong>Inicio:</strong> Ladrones de tiempo en la obra.</li>
+                                <li><strong>Nudo:</strong> Matriz Importante vs Urgente (Eisenhower).</li>
+                                <li><strong>Cierre:</strong> Auditoría de Agenda real.</li>
+                            </ul>
+                        </div>
+                        <div class="flex items-center gap-2 text-xs font-semibold text-slate-700 mt-2">
+                            <i data-lucide="file-check" class="w-4 h-4 text-green-500"></i>
+                            Entregable: Planificador semanal optimizado.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Separator -->
+            <div class="w-full h-px bg-slate-200 my-12"></div>
+
+            <!-- LEVEL 2: SENIOR -->
+            <div>
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="bg-[#61408F] text-white p-3 rounded-xl shadow-lg shadow-purple-200">
+                        <i data-lucide="compass" class="w-8 h-8"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-bold text-slate-900">Nivel 2: Contenido Avanzado</h4>
+                        <p class="text-slate-500 text-sm">Enfoque: "Development Center", vivencial, planes de trabajo y herramientas de gestión de personas.</p>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Modulo 2.1 -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 module-card senior group">
+                        <div class="flex justify-between items-start mb-4">
+                            <h5 class="font-bold text-lg text-slate-800 group-hover:text-[#61408F] transition-colors">1. Liderazgo Situacional</h5>
+                            <span class="bg-slate-100 text-slate-600 text-xs font-bold px-2 py-1 rounded">3 Horas</span>
+                        </div>
+                        <p class="text-slate-600 text-sm mb-4">
+                            Dejar de dirigir a todos igual. Diagnosticar el nivel de madurez (M1-M4) de cada colaborador.
+                        </p>
+                        <div class="bg-purple-50 p-4 rounded-xl border border-purple-100 mb-3">
+                            <strong class="text-xs text-[#61408F] uppercase block mb-2 tracking-wider">Agenda de la Sesión</strong>
+                            <ul class="agenda-list">
+                                <li><strong>Inicio:</strong> Autodiagnóstico de estilo de liderazgo.</li>
+                                <li><strong>Nudo:</strong> La matriz de madurez profesional (Querer/Poder).</li>
+                                <li><strong>Cierre:</strong> Mapping real del equipo.</li>
+                            </ul>
+                        </div>
+                        <div class="flex items-center gap-2 text-xs font-semibold text-slate-700 mt-2">
+                            <i data-lucide="map" class="w-4 h-4 text-purple-600"></i>
+                            Entregable: Matriz de talento del equipo.
+                        </div>
+                    </div>
+
+                    <!-- Modulo 2.2 -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 module-card senior group">
+                        <div class="flex justify-between items-start mb-4">
+                            <h5 class="font-bold text-lg text-slate-800 group-hover:text-[#61408F] transition-colors">2. Desarrollo de Equipos</h5>
+                            <span class="bg-slate-100 text-slate-600 text-xs font-bold px-2 py-1 rounded">3 Horas</span>
+                        </div>
+                        <p class="text-slate-600 text-sm mb-4">Delegación efectiva y empoderamiento. Salir del micromanagement para escalar.</p>
+                        <div class="bg-purple-50 p-4 rounded-xl border border-purple-100 mb-3">
+                            <strong class="text-xs text-[#61408F] uppercase block mb-2 tracking-wider">Agenda de la Sesión</strong>
+                            <ul class="agenda-list">
+                                <li><strong>Inicio:</strong> Barreras de la delegación ("tardo menos si lo hago yo").</li>
+                                <li><strong>Nudo:</strong> El proceso de delegación en 5 pasos.</li>
+                                <li><strong>Cierre:</strong> Identificación de sucesores y back-ups.</li>
+                            </ul>
+                        </div>
+                        <div class="flex items-center gap-2 text-xs font-semibold text-slate-700 mt-2">
+                            <i data-lucide="git-branch" class="w-4 h-4 text-purple-600"></i>
+                            Entregable: Plan de Sucesión Operativa.
+                        </div>
+                    </div>
+
+                    <!-- Modulo 2.3 -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 module-card senior group">
+                        <div class="flex justify-between items-start mb-4">
+                            <h5 class="font-bold text-lg text-slate-800 group-hover:text-[#61408F] transition-colors">3. Visión Estratégica</h5>
+                            <span class="bg-purple-100 text-[#61408F] text-xs font-bold px-2 py-1 rounded">4 Horas (Intensivo)</span>
+                        </div>
+                        <p class="text-slate-600 text-sm mb-4">Elevar la mirada. Impacto de decisiones en rentabilidad y cross-departamental.</p>
+                        <div class="bg-purple-50 p-4 rounded-xl border border-purple-100 mb-3">
+                            <strong class="text-xs text-[#61408F] uppercase block mb-2 tracking-wider">Agenda de la Sesión</strong>
+                            <ul class="agenda-list">
+                                <li><strong>Inicio:</strong> El mapa de procesos de Tecnyconta.</li>
+                                <li><strong>Nudo:</strong> Business Case (Caso de Negocio).</li>
+                                <li><strong>Cierre:</strong> Simulación de gestión de negocio y recursos.</li>
+                            </ul>
+                        </div>
+                        <div class="flex items-center gap-2 text-xs font-semibold text-slate-700 mt-2">
+                            <i data-lucide="bar-chart-2" class="w-4 h-4 text-purple-600"></i>
+                            Entregable: Análisis de impacto financiero.
+                        </div>
+                    </div>
+
+                    <!-- Modulo 2.4 -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 module-card senior group">
+                        <div class="flex justify-between items-start mb-4">
+                            <h5 class="font-bold text-lg text-slate-800 group-hover:text-[#61408F] transition-colors">4. Gestión del Cambio</h5>
+                            <span class="bg-slate-100 text-slate-600 text-xs font-bold px-2 py-1 rounded">3 Horas</span>
+                        </div>
+                        <p class="text-slate-600 text-sm mb-4">Comunicar y liderar transformaciones venciendo el "siempre se ha hecho así".</p>
+                        <div class="bg-purple-50 p-4 rounded-xl border border-purple-100 mb-3">
+                            <strong class="text-xs text-[#61408F] uppercase block mb-2 tracking-wider">Agenda de la Sesión</strong>
+                            <ul class="agenda-list">
+                                <li><strong>Inicio:</strong> La curva del cambio (resistencia vs adopción).</li>
+                                <li><strong>Nudo:</strong> Los 8 pasos de Kotter aplicados a planta.</li>
+                                <li><strong>Cierre:</strong> Planificación de comunicación de un cambio real.</li>
+                            </ul>
+                        </div>
+                        <div class="flex items-center gap-2 text-xs font-semibold text-slate-700 mt-2">
+                            <i data-lucide="send" class="w-4 h-4 text-purple-600"></i>
+                            Entregable: Hoja de Ruta del Cambio.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: BUDGET & CONDITIONS -->
+    <section id="presupuesto" class="py-16 bg-white border-t border-slate-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-[#61408F] font-bold tracking-wide uppercase text-sm mb-2 font-heading">Inversión y Condiciones</h2>
+                <h3 class="text-3xl font-bold text-slate-900">Presupuesto del Programa</h3>
+            </div>
+
+            <div class="bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden shadow-lg">
+                <div class="p-8 grid md:grid-cols-2 gap-8 items-start">
+                    <div>
+                        <h4 class="text-xl font-bold text-slate-800 mb-4">Desglose por Tipo de Sesión</h4>
+                        
+                        <!-- Fase 0 -->
+                        <div class="bg-white p-4 rounded-xl border border-amber-200 mb-3 flex justify-between items-center shadow-sm">
+                            <div>
+                                <h5 class="font-bold text-amber-900 text-sm">Fase 0: Calibración</h5>
+                                <p class="text-xs text-slate-500">Sesión única estratégica (4h)</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="block font-bold text-lg text-slate-800">320€</span>
+                            </div>
+                        </div>
+
+                        <!-- Sesion 3h -->
+                        <div class="bg-white p-4 rounded-xl border border-slate-200 mb-3 flex justify-between items-center shadow-sm">
+                            <div>
+                                <h5 class="font-bold text-slate-900 text-sm">Sesión Estándar (3h)</h5>
+                                <p class="text-xs text-slate-500">Módulos básicos y avanzados</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="block font-bold text-lg text-slate-800">240€</span>
+                                <span class="text-xs text-slate-400">/ sesión</span>
+                            </div>
+                        </div>
+
+                        <!-- Sesion 4h -->
+                        <div class="bg-white p-4 rounded-xl border border-[#61408F] mb-3 flex justify-between items-center shadow-sm relative overflow-hidden">
+                            <div class="absolute left-0 top-0 bottom-0 w-1 bg-[#61408F]"></div>
+                            <div>
+                                <h5 class="font-bold text-[#61408F] text-sm">Sesión Intensiva (4h)</h5>
+                                <p class="text-xs text-slate-500">Gestión Desempeño / Estrategia</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="block font-bold text-lg text-slate-800">320€</span>
+                                <span class="text-xs text-slate-400">/ sesión</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4 text-xs text-slate-500 italic text-center">
+                            * Precios calculados en base a tarifa horaria de 80€. IVA no incluido.
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl border border-slate-100 h-full">
+                        <h5 class="font-bold text-slate-800 mb-4 border-b pb-2">Condiciones Generales</h5>
+                        <ul class="text-sm space-y-4 text-slate-600">
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="clock" class="w-4 h-4 text-[#61408F] mt-0.5"></i>
+                                <span><strong>Tarifa Base:</strong> 80€ / hora de impartición.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="map-pin" class="w-4 h-4 text-[#E5236A] mt-0.5"></i>
+                                <span><strong>Desplazamiento:</strong> Se facturará kilometraje según política vigente (0,26€/km o acuerdo marco) desde Zaragoza.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-lucide="calendar-x" class="w-4 h-4 text-[#F89821] mt-0.5"></i>
+                                <span><strong>Cancelaciones:</strong> Sin coste hasta 5 días hábiles antes. 100% coste si < 48h.</span>
+                            </li>
+                             <li class="flex items-start gap-2">
+                                <i data-lucide="file-text" class="w-4 h-4 text-[#3DAA9D] mt-0.5"></i>
+                                <span><strong>Facturación:</strong> Mensual a mes vencido según horas ejecutadas.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#1a1a1a] text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+             <div class="flex justify-center mb-6">
+                <svg width="150" height="30" viewBox="0 0 484 80" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="grad1-f" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#E5236A"/><stop offset="100%" style="stop-color:#C11353"/></linearGradient>
+                        <linearGradient id="grad2-f" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#FDB813"/><stop offset="100%" style="stop-color:#F89821"/></linearGradient>
+                        <linearGradient id="grad3-f" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#4DBEAF"/><stop offset="100%" style="stop-color:#3DAA9D"/></linearGradient>
+                        <linearGradient id="grad4-f" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#61408F"/><stop offset="100%" style="stop-color:#50307A"/></linearGradient>
+                    </defs>
+                    <g transform="translate(40, 40)">
+                        <g transform="scale(0.8) translate(-50, -50)">
+                            <g transform="translate(50,50) rotate(45)">
+                                <rect x="-10" y="-45" width="20" height="40" rx="10" fill="url(#grad1-f)"></rect>
+                                <rect x="-10" y="-45" width="20" height="40" rx="10" fill="url(#grad2-f)" transform="rotate(90)"></rect>
+                                <rect x="-10" y="-45" width="20" height="40" rx="10" fill="url(#grad3-f)" transform="rotate(180)"></rect>
+                                <rect x="-10" y="-45" width="20" height="40" rx="10" fill="url(#grad4-f)" transform="rotate(270)"></rect>
+                            </g>
+                        </g>
+                    </g>
+                    <text x="95" y="59" font-family="Poppins, sans-serif" font-size="60" font-weight="bold" fill="#ffffff" letter-spacing="-2.5">talentología</text>
+                </svg>
+             </div>
+            <p class="mb-6 text-sm">Transformando líderes, construyendo futuro.</p>
+            <div class="flex justify-center gap-6 text-xs">
+                <span>© 2026 Talentología.</span>
+                <span>Propuesta para Tecnyconta (Adecco).</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
