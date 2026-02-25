@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe de Liderazgo SENDIN & Adecco</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Poppins for headings, Inter for body, Nunito for Adecco Logo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Nunito:wght@700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Poppins', 'sans-serif'],
+                        adecco: ['Nunito', 'sans-serif'], /* Specific font for the logo */
+                    },
+                    colors: {
+                        adecco: {
+                            red: '#E2231A',    /* Adecco Red */
+                            navy: '#0B1E36',   /* Dark Navy Title */
+                            gray: '#F4F6F9',   /* App bg gray */
+                            card: '#FFFFFF',   
+                            pill: '#F0F3F7'    /* Quadrant bg */
+                        },
+                        sendin: {
+                            yellow: '#FCA311'  /* Sendin Yellow */
+                        }
+                    },
+                    animation: {
+                        blob: "blob 7s infinite",
+                        'fade-in-up': 'fadeInUp 1s ease-out forwards',
+                    },
+                    keyframes: {
+                        blob: {
+                            "0%": { transform: "translate(0px, 0px) scale(1)" },
+                            "33%": { transform: "translate(30px, -50px) scale(1.1)" },
+                            "66%": { transform: "translate(-20px, 20px) scale(0.9)" },
+                            "100%": { transform: "translate(0px, 0px) scale(1)" }
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #FAFCFF; }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        
+        /* Adecco Slide Card Style */
+        .adecco-shadow-card {
+            position: relative;
+            z-index: 1;
+        }
+        .adecco-shadow-card::before {
+            content: '';
+            position: absolute;
+            top: 5px; 
+            left: -12px; 
+            right: 12px; 
+            bottom: -12px;
+            background-color: #E2231A;
+            border-radius: 1.5rem;
+            z-index: -1;
+            transition: transform 0.3s ease;
+        }
+        .adecco-shadow-card:hover::before {
+            transform: translate(-2px, 2px);
+        }
+
+        /* Pill Buttons Style */
+        .style-pill {
+            transition: all 0.3s ease;
+        }
+        .style-pill:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Diagonal Hero Cut */
+        .hero-pattern {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+    </style>
+</head>
+<body class="text-gray-700 antialiased selection:bg-adecco-red selection:text-white">
+
+    <!-- Top Navigation / Logos -->
+    <nav class="w-full bg-white px-8 py-4 flex items-center justify-between shadow-sm fixed top-0 z-50">
+        <div class="max-w-7xl mx-auto w-full flex justify-between items-center">
+            
+            <div class="flex items-center gap-5">
+                <!-- Adecco Logo Replica (Nunito Bold) -->
+                <div class="flex flex-col justify-center">
+                    <span class="text-adecco-red font-adecco font-bold text-3xl tracking-tight leading-none">Adecco</span>
+                    <span class="text-slate-500 font-adecco text-[0.65rem] font-bold tracking-[0.15em] leading-none mt-1">LEARNING & CONSULTING</span>
+                </div>
+                <!-- Divider -->
+                <div class="w-px h-10 bg-gray-200 hidden sm:block"></div>
+                <!-- Sendin Logo Replica -->
+                <div class="bg-sendin-yellow text-black font-display font-extrabold px-5 py-1.5 rounded-full text-xs tracking-widest shadow-sm hidden sm:block">
+                    SENDIN
+                </div>
+            </div>
+
+            <!-- Header status -->
+            <div class="hidden md:flex items-center gap-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">
+                <i class="fa-solid fa-lock text-gray-300"></i> Documento Confidencial
+            </div>
+        </div>
+    </nav>
+
+    <!-- NEW WOW HERO SECTION -->
+    <header class="relative bg-adecco-navy pt-36 pb-48 overflow-hidden">
+        <!-- Background decorative elements -->
+        <div class="absolute inset-0 hero-pattern opacity-20"></div>
+        
+        <!-- Animated glowing blobs -->
+        <div class="absolute top-0 -left-4 w-72 h-72 bg-adecco-red rounded-full mix-blend-screen filter blur-[100px] opacity-40 animate-blob"></div>
+        <div class="absolute top-0 -right-4 w-72 h-72 bg-blue-500 rounded-full mix-blend-screen filter blur-[100px] opacity-20 animate-blob" style="animation-delay: 2s;"></div>
+        <div class="absolute -bottom-8 left-20 w-72 h-72 bg-sendin-yellow rounded-full mix-blend-screen filter blur-[100px] opacity-20 animate-blob" style="animation-delay: 4s;"></div>
+
+        <div class="relative max-w-7xl mx-auto px-6 lg:px-8 text-center animate-fade-in-up">
+            <span class="inline-block py-1.5 px-4 rounded-full bg-white/10 text-white text-xs font-bold tracking-widest uppercase mb-6 backdrop-blur-md border border-white/20 shadow-xl">
+                <i class="fa-solid fa-chart-pie mr-2"></i>Evaluación Situacional de Equipo
+            </span>
+            
+            <h1 class="font-display text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
+                Informe de estilos de <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-adecco-red">liderazgo</span>
+            </h1>
+            
+            <p class="text-xl md:text-2xl text-blue-100/80 font-light max-w-3xl mx-auto">
+                Equipo directivo planta de producción <span class="font-semibold text-white">SENDIN</span> (Teruel)
+            </p>
+        </div>
+        
+        <!-- Curved bottom divider (optional touch for smoothness) -->
+        <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#FAFCFF] to-transparent"></div>
+    </header>
+
+    <!-- Overlapping Context Cards (Pulls the design together) -->
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 -mt-24 relative z-20 mb-24">
+        <div class="grid md:grid-cols-2 gap-6 text-left">
+            <!-- Info pill 1 -->
+            <div class="bg-white/95 backdrop-blur-xl rounded-2xl p-8 shadow-xl border border-white/50 flex gap-5 items-start transition-transform hover:-translate-y-1 duration-300">
+                <div class="w-12 h-12 rounded-full bg-blue-50 text-blue-500 flex items-center justify-center shrink-0 font-bold font-display text-xl shadow-inner">
+                    <i class="fa-solid fa-info"></i>
+                </div>
+                <div>
+                    <h3 class="font-display font-bold text-adecco-navy mb-2 text-lg">Contexto del informe</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Este documento recoge el análisis cualitativo derivado de las evaluaciones realizadas durante el reciente programa formativo de "Gestión de equipos" (12 horas). Se basa en el modelo de liderazgo situacional de Hersey y Blanchard para evaluar al nuevo equipo de mandos de la planta de producción de Teruel.
+                    </p>
+                </div>
+            </div>
+            <!-- Info pill 2 -->
+            <div class="bg-white/95 backdrop-blur-xl rounded-2xl p-8 shadow-xl border border-white/50 flex gap-5 items-start transition-transform hover:-translate-y-1 duration-300">
+                <div class="w-12 h-12 rounded-full bg-emerald-50 text-emerald-500 flex items-center justify-center shrink-0 font-bold font-display text-xl shadow-inner">
+                    <i class="fa-solid fa-bullseye"></i>
+                </div>
+                <div>
+                    <h3 class="font-display font-bold text-adecco-navy mb-2 text-lg">Objetivo</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Identificar fortalezas estructurales, áreas de mejora y proponer un plan de acción para consolidar el trabajo en equipo, maximizar la productividad, garantizar la seguridad y calidad, y minimizar la rotación y el absentismo en una fase crítica de arranque o reestructuración.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main class="max-w-7xl mx-auto px-6 lg:px-8 pb-24 space-y-32">
+
+        <!-- 1. Mapa de Liderazgo -->
+        <section class="reveal pt-8">
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-adecco-navy mb-4 text-center">1. Mapa de liderazgo del equipo directivo</h2>
+            <p class="text-gray-600 max-w-3xl mx-auto text-center mb-16 text-lg">
+                A continuación, se presenta la distribución del equipo directivo según su estilo de liderazgo predominante, basado en el cruce entre la orientación a la tarea y a la relación.
+            </p>
+
+            <!-- Card with distinctive red border from Adecco presentation -->
+            <div class="adecco-shadow-card max-w-5xl mx-auto">
+                <div class="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-gray-100 relative">
+                    
+                    <!-- Axes Labels -->
+                    <div class="absolute left-4 top-1/2 -translate-y-1/2 -rotate-90 origin-center text-gray-400 font-display font-bold tracking-widest text-xs uppercase whitespace-nowrap hidden md:block">
+                        👥 Alta relación ➡
+                    </div>
+                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 text-gray-400 font-display font-bold tracking-widest text-xs uppercase whitespace-nowrap">
+                        📋 Alta tarea ➡
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6 h-full relative z-10 md:ml-8 md:mb-8">
+                        
+                        <!-- Quadrant C -->
+                        <div class="bg-adecco-pill rounded-2xl p-6 flex flex-col h-full border border-gray-100">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex flex-col items-center justify-center shrink-0">
+                                    <span class="font-display font-bold text-xl text-adecco-navy leading-none">C</span>
+                                </div>
+                                <div>
+                                    <h3 class="font-display font-bold text-adecco-navy leading-tight">Participativo / impulsor</h3>
+                                    <p class="text-[0.65rem] text-gray-500 font-bold uppercase tracking-wider mt-1">Baja tarea / alta relación</p>
+                                </div>
+                            </div>
+                            <ul class="text-sm text-gray-600 mb-6 space-y-2 flex-grow ml-2">
+                                <li class="flex items-start"><span class="text-adecco-red mr-2">•</span> Fomenta la participación.</li>
+                                <li class="flex items-start"><span class="text-adecco-red mr-2">•</span> Facilita la toma de decisiones conjuntas.</li>
+                            </ul>
+                            <div class="bg-white rounded-xl p-4 shadow-sm">
+                                <p class="text-xs font-display font-bold text-adecco-navy mb-2">Mandos en este cuadrante:</p>
+                                <p class="text-xs text-gray-400 italic">(Ninguno como estilo principal)</p>
+                            </div>
+                        </div>
+
+                        <!-- Quadrant B -->
+                        <div class="bg-adecco-pill rounded-2xl p-6 flex flex-col h-full border border-gray-100 ring-2 ring-emerald-500/20 shadow-[0_0_30px_rgba(16,185,129,0.1)]">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex flex-col items-center justify-center shrink-0">
+                                    <span class="font-display font-bold text-xl text-adecco-navy leading-none">B</span>
+                                </div>
+                                <div>
+                                    <h3 class="font-display font-bold text-adecco-navy leading-tight">Desarrollador / entrenador</h3>
+                                    <p class="text-[0.65rem] text-gray-500 font-bold uppercase tracking-wider mt-1">Alta tarea / alta relación</p>
+                                </div>
+                            </div>
+                            <ul class="text-sm text-gray-600 mb-6 space-y-2 flex-grow ml-2">
+                                <li class="flex items-start"><span class="text-emerald-500 font-bold mr-2">•</span> Explica decisiones y aclara dudas.</li>
+                                <li class="flex items-start"><span class="text-emerald-500 font-bold mr-2">•</span> Alta dirección y alto apoyo.</li>
+                            </ul>
+                            <div class="bg-white rounded-xl p-4 shadow-sm">
+                                <p class="text-xs font-display font-bold text-adecco-navy mb-3">Mandos en este cuadrante:</p>
+                                <div class="flex flex-wrap gap-1.5">
+                                    <span class="bg-gray-50 text-gray-700 text-[0.7rem] px-2.5 py-1 rounded-md border border-gray-200">Pablo V. (37.5%)</span>
+                                    <span class="bg-gray-50 text-gray-700 text-[0.7rem] px-2.5 py-1 rounded-md border border-gray-200">Eduardo Tre (37.5%)</span>
+                                    <span class="bg-gray-50 text-gray-700 text-[0.7rem] px-2.5 py-1 rounded-md border border-gray-200">Manuel Alegre (33.3%)</span>
+                                    <span class="bg-gray-50 text-gray-700 text-[0.7rem] px-2.5 py-1 rounded-md border border-gray-200">Javier Soriano (33.3%)</span>
+                                    <span class="bg-gray-50 text-gray-700 text-[0.7rem] px-2.5 py-1 rounded-md border border-gray-200">Eduardo D. (33.3%)</span>
+                                    <span class="bg-gray-50 text-gray-700 text-[0.7rem] px-2.5 py-1 rounded-md border border-gray-200">José Carlos P. (33.3%)</span>
+                                    <span class="bg-gray-50 text-gray-700 text-[0.7rem] px-2.5 py-1 rounded-md border border-gray-200">Abel Llovet (33.3%)</span>
+                                    <span class="bg-gray-50 text-gray-700 text-[0.7rem] px-2.5 py-1 rounded-md border border-gray-200">Carmen Hernández (33.3%)</span>
+                                    <span class="bg-gray-50 text-gray-700 text-[0.7rem] px-2.5 py-1 rounded-md border border-gray-200">Noelia Angosto (33.3%)</span>
+                                    <span class="bg-gray-50 text-gray-700 text-[0.7rem] px-2.5 py-1 rounded-md border border-gray-200">Jorge (33.3%)</span>
+                                    <span class="bg-gray-50 text-gray-700 text-[0.7rem] px-2.5 py-1 rounded-md border border-gray-200">Norberto (31.3%)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Quadrant D -->
+                        <div class="bg-adecco-pill rounded-2xl p-6 flex flex-col h-full border border-gray-100">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex flex-col items-center justify-center shrink-0">
+                                    <span class="font-display font-bold text-xl text-adecco-navy leading-none">D</span>
+                                </div>
+                                <div>
+                                    <h3 class="font-display font-bold text-adecco-navy leading-tight">Delegativo / conector</h3>
+                                    <p class="text-[0.65rem] text-gray-500 font-bold uppercase tracking-wider mt-1">Baja tarea / baja relación</p>
+                                </div>
+                            </div>
+                            <ul class="text-sm text-gray-600 mb-6 space-y-2 flex-grow ml-2">
+                                <li class="flex items-start"><span class="text-gray-400 font-bold mr-2">•</span> Cede la responsabilidad.</li>
+                                <li class="flex items-start"><span class="text-gray-400 font-bold mr-2">•</span> Supervisa desde la distancia.</li>
+                            </ul>
+                            <div class="bg-white rounded-xl p-4 shadow-sm">
+                                <p class="text-xs font-display font-bold text-adecco-navy mb-2">Mandos en este cuadrante:</p>
+                                <p class="text-xs text-gray-400 italic">(Ninguno como estilo principal)</p>
+                            </div>
+                        </div>
+
+                        <!-- Quadrant A -->
+                        <div class="bg-adecco-pill rounded-2xl p-6 flex flex-col h-full border border-gray-100 ring-2 ring-blue-500/20 shadow-[0_0_30px_rgba(59,130,246,0.1)]">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex flex-col items-center justify-center shrink-0">
+                                    <span class="font-display font-bold text-xl text-adecco-navy leading-none">A</span>
+                                </div>
+                                <div>
+                                    <h3 class="font-display font-bold text-adecco-navy leading-tight">Directivo / resolutivo</h3>
+                                    <p class="text-[0.65rem] text-gray-500 font-bold uppercase tracking-wider mt-1">Alta tarea / baja relación</p>
+                                </div>
+                            </div>
+                            <ul class="text-sm text-gray-600 mb-6 space-y-2 flex-grow ml-2">
+                                <li class="flex items-start"><span class="text-blue-500 font-bold mr-2">•</span> Da instrucciones precisas.</li>
+                                <li class="flex items-start"><span class="text-blue-500 font-bold mr-2">•</span> Supervisa de cerca el cumplimiento.</li>
+                            </ul>
+                            <div class="bg-white rounded-xl p-4 shadow-sm">
+                                <p class="text-xs font-display font-bold text-adecco-navy mb-3">Mandos en este cuadrante:</p>
+                                <div class="flex flex-wrap gap-1.5">
+                                    <span class="bg-gray-50 text-gray-700 text-[0.7rem] px-2.5 py-1 rounded-md border border-gray-200">Cristina (37.5%)</span>
+                                    <span class="bg-gray-50 text-gray-700 text-[0.7rem] px-2.5 py-1 rounded-md border border-gray-200">Cindy (33.3%)</span>
+                                    <span class="bg-gray-50 text-gray-700 text-[0.7rem] px-2.5 py-1 rounded-md border border-gray-200">Sergio Manea (33.3%)</span>
+                                    <span class="bg-gray-50 text-gray-700 text-[0.7rem] px-2.5 py-1 rounded-md border border-gray-200">Miguel Sánchez (33.3%)</span>
+                                    <span class="bg-gray-50 text-gray-700 text-[0.7rem] px-2.5 py-1 rounded-md border border-gray-200">Miguel Almazán (33.3%)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <!-- Warning/Note Pill -->
+            <div class="max-w-3xl mx-auto mt-12 bg-white rounded-2xl p-5 shadow-sm border border-amber-100 flex gap-4 items-center">
+                <div class="w-8 h-8 rounded-full bg-amber-50 text-amber-500 flex items-center justify-center shrink-0 font-bold font-display text-sm">
+                    <i class="fa-solid fa-exclamation"></i>
+                </div>
+                <p class="text-sm text-gray-600">
+                    <strong class="text-adecco-navy font-display">Nota:</strong> la gran mayoría de los mandos en el cuadrante A tienen el B como secundario, y viceversa, lo que indica una fuerte concentración en la mitad derecha de la matriz (alta tarea).
+                </p>
+            </div>
+        </section>
+
+        <!-- 2. Resumen Ejecutivo -->
+        <section class="reveal">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="font-display text-3xl font-bold text-adecco-navy mb-6 flex items-center">
+                    <span class="bg-adecco-red text-white w-10 h-10 rounded-lg flex items-center justify-center mr-4 shadow-md text-xl">2</span> 
+                    Resumen ejecutivo del perfil grupal
+                </h2>
+                <div class="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-gray-100 space-y-6 text-gray-600 leading-relaxed text-lg">
+                    <p class="first-letter:text-4xl first-letter:font-bold first-letter:text-adecco-navy first-letter:mr-1">Tras 12 horas de trabajo en el aula y la evaluación individual de los 16 mandos, el equipo directivo de SENDIN presenta una marcada y casi unánime concentración en los cuadrantes de alta orientación a la tarea (modelos A y B).</p>
+                    <p>La inmensa mayoría tiene como estilo principal el liderazgo desarrollador (B) (11 mandos), respaldado por un sólido grupo con estilo principal directivo (A) (5 mandos).</p>
+                    <p>Por el contrario, la presencia de los estilos participativo (C) y delegativo (D) como tendencias principales es inexistente. Este patrón es habitual, y hasta cierto punto necesario, en entornos industriales de alta exigencia, pero plantea retos específicos de sostenibilidad a medio plazo.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Fortalezas -->
+        <section class="reveal">
+            <h2 class="font-display text-3xl font-bold text-adecco-navy mb-3 text-center">
+                <span class="text-adecco-red">3.</span> Puntos de valor y fortalezas claras
+            </h2>
+            <p class="text-gray-500 text-center mb-12 font-display italic">(el legado del curso)</p>
+            
+            <p class="text-gray-600 text-lg mb-10 max-w-4xl mx-auto text-center">Este perfil grupal ofrece ventajas competitivas muy claras para los retos actuales de la planta de Teruel:</p>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="style-pill bg-white rounded-3xl p-8 shadow-sm border border-gray-100 text-center flex flex-col items-center">
+                    <div class="w-20 h-20 mb-6 bg-blue-50/50 text-blue-600 rounded-2xl flex items-center justify-center text-3xl shadow-inner border border-blue-100/50">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="font-display text-lg font-bold text-adecco-navy mb-1">Alineación total con la seguridad, calidad y plazos</h3>
+                    <span class="text-xs font-bold text-blue-500 uppercase tracking-wider block mb-5 bg-blue-50 px-3 py-1 rounded-full">(estilo A - directivo)</span>
+                    <p class="text-gray-600 text-sm leading-relaxed">Al tener un alto componente de orientación a la tarea, el equipo tiene la capacidad natural de definir roles, establecer directrices claras y asegurar que los procedimientos operativos y de seguridad se cumplan sin ambigüedades. Esto es crítico en la producción para evitar accidentes y cumplir plazos de entrega.</p>
+                </div>
+
+                <div class="style-pill bg-white rounded-3xl p-8 shadow-sm border border-gray-100 text-center flex flex-col items-center">
+                    <div class="w-20 h-20 mb-6 bg-emerald-50/50 text-emerald-600 rounded-2xl flex items-center justify-center text-3xl shadow-inner border border-emerald-100/50">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+                    <h3 class="font-display text-lg font-bold text-adecco-navy mb-1">Excelente base para frenar la rotación y el absentismo</h3>
+                    <span class="text-xs font-bold text-emerald-500 uppercase tracking-wider block mb-5 bg-emerald-50 px-3 py-1 rounded-full">(estilo B - desarrollador)</span>
+                    <p class="text-gray-600 text-sm leading-relaxed">La gran fortaleza de este grupo es que, mayoritariamente, no ejercen un liderazgo exclusivamente autoritario. Al equilibrar la exigencia operativa con un alto apoyo socioemocional, generan compromiso. Los operarios no solo reciben órdenes, sino que entienden el "porqué", lo que fomenta el sentido de pertenencia.</p>
+                </div>
+
+                <div class="style-pill bg-white rounded-3xl p-8 shadow-sm border border-gray-100 text-center flex flex-col items-center">
+                    <div class="w-20 h-20 mb-6 bg-amber-50/50 text-amber-500 rounded-2xl flex items-center justify-center text-3xl shadow-inner border border-amber-100/50">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h3 class="font-display text-lg font-bold text-adecco-navy mb-1 mt-6">Capacidad para acelerar la curva de aprendizaje</h3>
+                    <span class="text-xs font-bold text-transparent block mb-5 px-3 py-1">-</span> <!-- Spacer to match layout -->
+                    <p class="text-gray-600 text-sm leading-relaxed mt-1">En equipos donde hay personal nuevo, el estilo B (desarrollador) es el más efectivo. Los mandos de SENDIN tienen la paciencia y la habilidad para guiar de cerca a los nuevos operarios, formándolos técnicamente mientras los integran en la cultura de la empresa.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Áreas de Oportunidad -->
+        <section class="reveal">
+            <h2 class="font-display text-3xl font-bold text-adecco-navy mb-4 text-center">
+                <span class="text-adecco-red">4.</span> Áreas de oportunidad y retos de desarrollo
+            </h2>
+            <p class="text-gray-600 text-lg mb-12 max-w-3xl mx-auto text-center">Para que este equipo pase de ser "excelentes gestores de área" a un verdadero "equipo directivo de alto rendimiento", deben trabajar en las siguientes áreas:</p>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- A. Hacia sus equipos -->
+                <div class="bg-white rounded-3xl p-8 md:p-10 shadow-sm border border-gray-100">
+                    <h3 class="font-display text-xl font-bold text-adecco-navy mb-8 flex items-center pb-5 border-b border-gray-100">
+                        <span class="bg-adecco-navy text-white w-10 h-10 rounded-xl flex items-center justify-center mr-4 text-lg">A</span>
+                        <div>
+                            Como mandos hacia sus equipos <br>
+                            <span class="font-normal text-sm text-gray-400 mt-1 block">(desarrollo operativo)</span>
+                        </div>
+                    </h3>
+                    <ul class="space-y-8">
+                        <li class="flex items-start">
+                            <div class="mt-1 mr-4 text-adecco-red bg-red-50 p-2 rounded-lg"><i class="fa-solid fa-check"></i></div>
+                            <div>
+                                <strong class="text-adecco-navy font-display block mb-2">El riesgo del "cuello de botella" (déficit en estilo D - delegativo):</strong>
+                                <span class="text-gray-600 text-sm leading-relaxed">El nivel de delegación pura en el grupo es muy bajo. Aunque es comprensible en equipos operativos jóvenes, los mandos deben aprender a identificar a sus operarios más experimentados y ceder control. Si no delegan, sufrirán sobrecarga de trabajo, estrés y limitarán el crecimiento de los mandos intermedios.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="mt-1 mr-4 text-adecco-red bg-red-50 p-2 rounded-lg"><i class="fa-solid fa-check"></i></div>
+                            <div>
+                                <strong class="text-adecco-navy font-display block mb-2">Fomento de la mejora continua (déficit en estilo C - participativo):</strong>
+                                <span class="text-gray-600 text-sm leading-relaxed">La planta necesita eficiencia. El estilo participativo es el que invita a los colaboradores a aportar ideas (<em>"¿cómo harías tú este proceso más rápido o seguro?"</em>). Deben soltar un poco el control de las directrices para que los equipos propongan mejoras, fomentando la innovación a pie de máquina.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- B. Cohesión interna -->
+                <div class="bg-white rounded-3xl p-8 md:p-10 shadow-sm border border-gray-100">
+                    <h3 class="font-display text-xl font-bold text-adecco-navy mb-8 flex items-center pb-5 border-b border-gray-100">
+                        <span class="bg-adecco-navy text-white w-10 h-10 rounded-xl flex items-center justify-center mr-4 text-lg">B</span>
+                        <div>
+                            Como equipo directivo de nueva creación <br>
+                            <span class="font-normal text-sm text-gray-400 mt-1 block">(cohesión interna)</span>
+                        </div>
+                    </h3>
+                    <ul class="space-y-8">
+                        <li class="flex items-start">
+                            <div class="mt-1 mr-4 text-adecco-red bg-red-50 p-2 rounded-lg"><i class="fa-solid fa-check"></i></div>
+                            <div>
+                                <strong class="text-adecco-navy font-display block mb-2">Evitar el choque de perfiles "directivos":</strong>
+                                <span class="text-gray-600 text-sm leading-relaxed">Al ser un equipo donde muchos son nuevos y todos tienen un altísimo enfoque a la tarea, existe el riesgo de trabajar en "silos departamentales".</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="mt-1 mr-4 text-adecco-red bg-red-50 p-2 rounded-lg"><i class="fa-solid fa-check"></i></div>
+                            <div>
+                                <strong class="text-adecco-navy font-display block mb-2">Necesidad de aplicar el modelo C (participativo) entre ellos mismos:</strong>
+                                <span class="text-gray-600 text-sm leading-relaxed">Para construir un verdadero modelo de trabajo en equipo en la planta, los mandos deben relacionarse entre sí usando el cuadrante C. Necesitan participar en la toma de decisiones conjuntas, compartir recursos y ver la planta de Teruel como un único ecosistema interdependiente.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Plan de Acción -->
+        <section class="reveal">
+            <h2 class="font-display text-3xl font-bold text-adecco-navy mb-4 text-center">
+                <span class="text-adecco-red">5.</span> Plan de acción recomendado
+            </h2>
+            <p class="text-gray-500 text-center mb-12 font-display italic">dinámicas de consolidación</p>
+            
+            <p class="text-gray-600 text-lg mb-12 max-w-3xl mx-auto text-center">Para anclar los conocimientos del curso de 12 horas y trabajar las áreas de mejora detectadas, proponemos las siguientes acciones formativas o dinámicas de seguimiento:</p>
+
+            <div class="max-w-4xl mx-auto space-y-6">
+                
+                <!-- Accion 1 -->
+                <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-gray-100 flex flex-col md:flex-row gap-6 items-start group hover:border-adecco-red/30 transition-colors">
+                    <div class="bg-adecco-navy text-white font-display font-bold w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 text-2xl group-hover:bg-adecco-red transition-colors shadow-sm">
+                        1
+                    </div>
+                    <div class="w-full mt-1">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-2">
+                            <h3 class="font-display font-bold text-xl text-adecco-navy">Mapa de delegación operativa</h3>
+                            <span class="text-[0.65rem] font-bold px-4 py-1.5 bg-gray-100 text-gray-600 rounded-full uppercase tracking-widest border border-gray-200">Foco Cuadrante D</span>
+                        </div>
+                        <p class="text-sm mb-5"><strong class="font-display text-gray-800">Objetivo:</strong> <span class="text-gray-600">Vencer el miedo a la pérdida de control y generar una cantera de operarios senior de confianza.</span></p>
+                        <div class="bg-adecco-pill p-5 rounded-2xl border border-gray-200/60">
+                            <strong class="font-display text-adecco-navy block mb-2 text-xs uppercase tracking-wider">Dinámica:</strong> 
+                            <span class="text-gray-600 text-sm leading-relaxed">En una sesión de 2 horas, cada mando deberá mapear sus tareas rutinarias y seleccionar obligatoriamente <strong>2 tareas para delegar</strong>. Diseñarán un "contrato de delegación" identificando a qué operario se lo van a transferir, los plazos de formación, y los indicadores de supervisión.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Accion 2 -->
+                <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-gray-100 flex flex-col md:flex-row gap-6 items-start group hover:border-adecco-red/30 transition-colors">
+                    <div class="bg-adecco-navy text-white font-display font-bold w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 text-2xl group-hover:bg-adecco-red transition-colors shadow-sm">
+                        2
+                    </div>
+                    <div class="w-full mt-1">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-2">
+                            <h3 class="font-display font-bold text-xl text-adecco-navy">Comités de mejora transversal</h3>
+                            <span class="text-[0.65rem] font-bold px-4 py-1.5 bg-gray-100 text-gray-600 rounded-full uppercase tracking-widest border border-gray-200">Foco Cuadrante C</span>
+                        </div>
+                        <p class="text-sm mb-5"><strong class="font-display text-gray-800">Objetivo:</strong> <span class="text-gray-600">Romper los silos departamentales, fomentar el trabajo en equipo directivo y practicar el liderazgo participativo.</span></p>
+                        <div class="bg-adecco-pill p-5 rounded-2xl border border-gray-200/60">
+                            <strong class="font-display text-adecco-navy block mb-2 text-xs uppercase tracking-wider">Dinámica:</strong> 
+                            <span class="text-gray-600 text-sm leading-relaxed">Crear reuniones mensuales (1 hora) donde se exponga un problema real de la planta. El mando responsable del área afectada <strong>no puede dar la solución</strong>; debe actuar como facilitador (estilo C), haciendo preguntas cruzadas para que sean sus compañeros quienes propongan soluciones y estandaricen el proceso.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Accion 3 -->
+                <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-gray-100 flex flex-col md:flex-row gap-6 items-start group hover:border-adecco-red/30 transition-colors">
+                    <div class="bg-adecco-navy text-white font-display font-bold w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 text-2xl group-hover:bg-adecco-red transition-colors shadow-sm">
+                        3
+                    </div>
+                    <div class="w-full mt-1">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-2">
+                            <h3 class="font-display font-bold text-xl text-adecco-navy">"Shadowing" y clínica de liderazgo</h3>
+                            <span class="text-[0.65rem] font-bold px-4 py-1.5 bg-gray-100 text-gray-600 rounded-full uppercase tracking-widest border border-gray-200">Seguimiento</span>
+                        </div>
+                        <p class="text-sm mb-5"><strong class="font-display text-gray-800">Objetivo:</strong> <span class="text-gray-600">Asegurar que lo aprendido en el aula se aplica en la realidad de la planta y calibrar el estilo según el operario.</span></p>
+                        <div class="bg-adecco-pill p-5 rounded-2xl border border-gray-200/60">
+                            <strong class="font-display text-adecco-navy block mb-2 text-xs uppercase tracking-wider">Dinámica:</strong> 
+                            <span class="text-gray-600 text-sm leading-relaxed">Formar parejas de mandos. Mensualmente, uno acompañará al otro durante 45 minutos observando cómo interactúa con su equipo en planta (<em>shadowing</em>). Posteriormente, tendrán 15 minutos para darse feedback estructurado sobre si están logrando desarrollar a su gente o si se están excediendo en la dirección.</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white border-t border-gray-200 py-10 text-center text-gray-500 text-sm mt-12">
+        <p class="font-display text-adecco-navy font-semibold text-base mb-1">Dirección de RRHH - SENDIN (Planta Teruel)</p>
+        <p>Generado a partir de los datos de evaluación situacional de Hersey y Blanchard.</p>
+    </footer>
+
+    <!-- Script for scroll animations -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.reveal');
+            
+            const revealOnScroll = () => {
+                const windowHeight = window.innerHeight;
+                const elementVisible = 150;
+                
+                reveals.forEach((reveal) => {
+                    const elementTop = reveal.getBoundingClientRect().top;
+                    if (elementTop < windowHeight - elementVisible) {
+                        reveal.classList.add('active');
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', revealOnScroll);
+            revealOnScroll(); // Trigger once on load
+        });
+    </script>
+</body>
+</html>
