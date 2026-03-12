@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BalanZ - Centro de Alto Rendimiento Adolescente</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-orange-500 selection:text-white">
+
+  <!-- Background abstract sporty shapes -->
+  <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none opacity-20">
+    <div class="absolute top-[-20%] right-[-10%] w-[50%] h-[80%] bg-slate-200 transform rotate-12 -skew-x-12"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-6">
+    <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+      <div class="flex items-center gap-2">
+        <div class="w-10 h-10 bg-slate-900 rounded-lg flex items-center justify-center text-xl font-black italic text-orange-500">
+          B
+        </div>
+        <span class="text-3xl font-black italic tracking-tighter text-slate-900 uppercase">
+          BalanZ
+        </span>
+      </div>
+      <div class="hidden md:flex items-center gap-8 text-sm font-bold text-slate-600 uppercase tracking-wide">
+        <a href="#metodologia" class="hover:text-orange-500 transition-colors">El Método</a>
+        <a href="#fundador" class="hover:text-orange-500 transition-colors">El Fundador</a>
+        <a href="#padres" class="hover:text-orange-500 transition-colors">Familias</a>
+      </div>
+      <button class="bg-orange-500 text-white px-6 py-2.5 rounded-sm font-bold text-sm uppercase tracking-wide hover:bg-orange-600 transition-colors shadow-[4px_4px_0px_rgba(15,23,42,1)] hover:shadow-[2px_2px_0px_rgba(15,23,42,1)] hover:translate-y-[2px] hover:translate-x-[2px]">
+        Únete Hoy
+      </button>
+    </div>
+  </nav>
+
+  <main class="relative z-10">
+    <!-- Hero Section -->
+    <section class="pt-40 pb-20 px-6 min-h-[90vh] flex flex-col justify-center relative">
+      <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+        <div class="flex-1 text-left">
+          <div class="inline-flex items-center gap-2 px-4 py-2 bg-slate-900 text-white font-bold text-xs uppercase tracking-widest mb-8 skew-x-[-10deg]">
+            <span class="skew-x-[10deg] flex items-center gap-2">
+              <i data-lucide="book-open" class="text-orange-500 w-4 h-4"></i>
+              El Gimnasio que mejora tus notas
+            </span>
+          </div>
+          <h1 class="text-6xl md:text-8xl font-black uppercase italic leading-[0.9] tracking-tighter mb-8 text-slate-900">
+            Disciplina física.<br />
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-600">
+              Excelencia académica.
+            </span>
+          </h1>
+          <p class="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl font-medium leading-relaxed">
+            El único Centro de Alto Rendimiento para adolescentes (12-18 años) donde usamos la exigencia del deporte como motor para disparar sus resultados escolares. <strong class="text-slate-900">Entrenamiento guiado y aula de estudio supervisada, todo en un mismo lugar.</strong>
+          </p>
+          <div class="flex flex-col sm:flex-row items-center gap-4">
+            <button class="w-full sm:w-auto px-8 py-4 bg-orange-500 text-white font-black text-lg uppercase italic tracking-wide hover:bg-orange-600 transition-all shadow-[6px_6px_0px_rgba(15,23,42,1)] hover:shadow-[3px_3px_0px_rgba(15,23,42,1)] hover:translate-y-[3px] hover:translate-x-[3px] flex items-center justify-center gap-2">
+              Solicitar Admisión <i data-lucide="chevron-right" class="w-6 h-6"></i>
+            </button>
+            <button class="w-full sm:w-auto px-8 py-4 bg-transparent text-slate-900 font-black text-lg uppercase italic tracking-wide hover:bg-slate-100 transition-colors border-4 border-slate-900 flex items-center justify-center gap-2">
+              Ver Metodología
+            </button>
+          </div>
+        </div>
+        
+        <div class="flex-1 hidden md:block">
+          <div class="relative">
+            <div class="absolute inset-0 bg-orange-500 transform rotate-6 scale-105"></div>
+            <img 
+              src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+              alt="Adolescente entrenando" 
+              class="relative z-10 w-full h-auto object-cover grayscale contrast-125 mix-blend-multiply"
+            />
+          </div>
+        </div>
+      </div>
+      
+      <div class="max-w-6xl mx-auto w-full mt-24 grid grid-cols-2 md:grid-cols-4 gap-4 border-y-2 border-slate-200 py-8 text-center bg-white">
+        <div>
+          <h4 class="text-4xl font-black italic text-slate-900 mb-1">12-18</h4>
+          <p class="text-xs text-slate-500 font-bold uppercase tracking-widest">Años de edad</p>
+        </div>
+        <div>
+          <h4 class="text-4xl font-black italic text-slate-900 mb-1">100%</h4>
+          <p class="text-xs text-slate-500 font-bold uppercase tracking-widest">Deberes Hechos</p>
+        </div>
+        <div>
+          <h4 class="text-4xl font-black italic text-slate-900 mb-1">1 a 1</h4>
+          <p class="text-xs text-slate-500 font-bold uppercase tracking-widest">Tutorías Mensuales</p>
+        </div>
+        <div>
+          <h4 class="text-4xl font-black italic text-slate-900 mb-1">360°</h4>
+          <p class="text-xs text-slate-500 font-bold uppercase tracking-widest">Desarrollo Integral</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Founder Section -->
+    <section id="fundador" class="py-24 px-6 bg-slate-900 text-white relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-1/2 h-full bg-slate-800 transform skew-x-12 origin-top-right"></div>
+      <div class="max-w-6xl mx-auto relative z-10 flex flex-col md:flex-row items-center gap-16">
+        <div class="w-full md:w-5/12">
+           <div class="relative aspect-[4/5] bg-slate-950 border-4 border-slate-700 shadow-[12px_12px_0px_rgba(249,115,22,1)] p-2">
+              <img 
+                src="https://images.unsplash.com/photo-1594381898411-846e7d193883?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                alt="Nacho Caballero" 
+                class="object-cover w-full h-full grayscale hover:grayscale-0 transition-all duration-500" 
+              />
+              <div class="absolute bottom-6 left-6 right-6 bg-slate-900/90 backdrop-blur-sm p-4 border-l-4 border-orange-500">
+                <h3 class="text-2xl font-black italic uppercase">Nacho Caballero</h3>
+                <p class="text-orange-500 font-bold text-sm tracking-wider uppercase">Fundador & Atleta</p>
+              </div>
+           </div>
+        </div>
+        <div class="w-full md:w-7/12 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 bg-orange-500/20 text-orange-500 font-bold text-xs uppercase tracking-widest border border-orange-500/30">
+            <i data-lucide="trophy" class="w-4 h-4"></i> Creado por Atletas
+          </div>
+          <h2 class="text-4xl md:text-6xl font-black uppercase italic leading-[0.95] tracking-tight">
+            El deporte como excusa para el <span class="text-orange-500">éxito escolar.</span>
+          </h2>
+          <div class="w-20 h-2 bg-orange-500 mb-6"></div>
+          <p class="text-lg text-slate-300 font-medium leading-relaxed">
+            "Como deportista, he comprobado que la disciplina física es el verdadero motor para el éxito académico. Los adolescentes necesitan quemar energía para poder sentarse y concentrarse. El gimnasio no es solo para levantar pesas, es para forjar carácter."
+          </p>
+          <p class="text-lg text-slate-300 font-medium leading-relaxed">
+            BalanZ nace con un único objetivo: usar nuestra pasión por el deporte para solucionar la mayor preocupación de los padres. Entrenan como atletas, y con esa misma mentalidad, entran al aula a destrozar sus exámenes.
+          </p>
+          <div class="pt-6">
+            <a 
+              href="https://www.instagram.com/nachocaballeroo" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="inline-flex items-center gap-3 bg-white text-slate-900 px-6 py-3 font-bold uppercase tracking-wider hover:bg-orange-500 hover:text-white transition-colors"
+            >
+              <i data-lucide="instagram" class="w-6 h-6"></i> Sigue mi día a día
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Metodología / Pillars Section -->
+    <section id="metodologia" class="py-24 px-6 bg-slate-100">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-black uppercase italic tracking-tight text-slate-900 mb-4">El Sistema BalanZ</h2>
+          <p class="text-slate-600 font-medium max-w-2xl mx-auto text-lg">Una metodología implacable que cubre los tres pilares del rendimiento en la etapa más crucial.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Pillar 1 -->
+          <div class="bg-white border-2 border-slate-200 p-8 shadow-[8px_8px_0px_rgba(226,232,240,1)] hover:-translate-y-2 hover:shadow-[12px_12px_0px_rgba(249,115,22,1)] transition-all group">
+            <div class="w-16 h-16 bg-slate-900 flex items-center justify-center text-orange-500 mb-6 skew-x-[-10deg]">
+              <i data-lucide="activity" class="skew-x-[10deg] w-8 h-8"></i>
+            </div>
+            <h3 class="text-2xl font-black italic uppercase mb-4 text-slate-900">1. Entrenamiento Físico</h3>
+            <p class="text-slate-600 font-medium mb-6 leading-relaxed">
+              Fuerza, técnica y disciplina. Rutinas estrictas adaptadas para adolescentes que construyen cuerpos sanos y mentes blindadas.
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-center gap-2 text-sm font-bold text-slate-700">
+                <i data-lucide="target" class="text-orange-500 w-[18px] h-[18px]"></i> Coaches especialistas
+              </li>
+              <li class="flex items-center gap-2 text-sm font-bold text-slate-700">
+                <i data-lucide="target" class="text-orange-500 w-[18px] h-[18px]"></i> Planificación semanal estricta
+              </li>
+            </ul>
+          </div>
+
+          <!-- Pillar 2 - EL DIFERENCIADOR -->
+          <div class="bg-slate-900 border-4 border-orange-500 p-8 shadow-[12px_12px_0px_rgba(249,115,22,1)] hover:-translate-y-2 hover:shadow-[16px_16px_0px_rgba(249,115,22,1)] transition-all group relative transform scale-105 z-10">
+            <div class="absolute -top-4 -right-4 bg-orange-500 text-white font-black italic uppercase text-xs px-4 py-2 border-2 border-slate-900 skew-x-[-10deg]">
+              <span class="skew-x-[10deg] block">Nuestra Clave</span>
+            </div>
+            <div class="w-16 h-16 bg-white flex items-center justify-center text-orange-500 mb-6 skew-x-[-10deg]">
+              <i data-lucide="book-open" class="skew-x-[10deg] w-8 h-8"></i>
+            </div>
+            <h3 class="text-2xl font-black italic uppercase mb-4 text-white">2. Refuerzo Académico</h3>
+            <p class="text-slate-300 font-medium mb-6 leading-relaxed">
+              Nuestro gran diferencial. Del esfuerzo físico a la concentración absoluta. Aula de estudio estricta y supervisada para rentabilizar el foco post-entreno. No van a casa hasta acabar los deberes.
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-center gap-2 text-sm font-bold text-slate-200">
+                <i data-lucide="target" class="text-orange-500 w-[18px] h-[18px]"></i> Profesores y educadores en sala
+              </li>
+              <li class="flex items-center gap-2 text-sm font-bold text-slate-200">
+                <i data-lucide="target" class="text-orange-500 w-[18px] h-[18px]"></i> Entorno de alto rendimiento mental
+              </li>
+            </ul>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="bg-white border-2 border-slate-200 p-8 shadow-[8px_8px_0px_rgba(226,232,240,1)] hover:-translate-y-2 hover:shadow-[12px_12px_0px_rgba(249,115,22,1)] transition-all group">
+            <div class="w-16 h-16 bg-orange-500 flex items-center justify-center text-white mb-6 skew-x-[-10deg]">
+              <i data-lucide="brain" class="skew-x-[10deg] w-8 h-8"></i>
+            </div>
+            <h3 class="text-2xl font-black italic uppercase mb-4 text-slate-900">3. Desarrollo Personal</h3>
+            <p class="text-slate-600 font-medium mb-6 leading-relaxed">
+              Construimos ganadores. Trabajo en inteligencia emocional, gestión de la frustración y creación de hábitos inquebrantables.
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-center gap-2 text-sm font-bold text-slate-700">
+                <i data-lucide="target" class="text-orange-500 w-[18px] h-[18px]"></i> Medición de impacto y adherencia
+              </li>
+              <li class="flex items-center gap-2 text-sm font-bold text-slate-700">
+                <i data-lucide="target" class="text-orange-500 w-[18px] h-[18px]"></i> Comunidad de alto valor
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- For Parents Section -->
+    <section id="padres" class="py-24 px-6 bg-white border-y border-slate-200">
+      <div class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-16">
+        <div class="lg:w-1/2">
+          <div class="inline-flex items-center gap-2 px-3 py-1 bg-slate-100 text-slate-600 font-bold text-xs uppercase tracking-widest border border-slate-300 mb-6">
+            <i data-lucide="users" class="w-4 h-4"></i> Para las familias
+          </div>
+          <h2 class="text-4xl md:text-5xl font-black uppercase italic tracking-tight mb-6 text-slate-900">Se acabó pelear por <br/>los deberes.</h2>
+          <p class="text-lg text-slate-600 mb-8 font-medium">
+            Sabemos que el rendimiento escolar es la prioridad. En BalanZ, el entreno es el gancho para ellos, y el estudio supervisado es la garantía para ti. Vuelven a casa entrenados y con las tareas hechas.
+          </p>
+          
+          <div class="space-y-8">
+            <div class="flex gap-4 items-start">
+              <div class="w-12 h-12 bg-slate-900 text-orange-500 flex items-center justify-center shrink-0 skew-x-[-10deg]">
+                <i data-lucide="shield-check" class="skew-x-[10deg] w-6 h-6"></i>
+              </div>
+              <div>
+                <h4 class="text-xl font-black italic uppercase text-slate-900 mb-1">Informes de Rendimiento</h4>
+                <p class="text-slate-600 font-medium">Data real sobre su asistencia, mejoras de fuerza y cumplimiento de horas de estudio.</p>
+              </div>
+            </div>
+            <div class="flex gap-4 items-start">
+              <div class="w-12 h-12 bg-slate-900 text-white flex items-center justify-center shrink-0 skew-x-[-10deg]">
+                <i data-lucide="message-circle" class="skew-x-[10deg] w-6 h-6"></i>
+              </div>
+              <div>
+                <h4 class="text-xl font-black italic uppercase text-slate-900 mb-1">Contacto Directo</h4>
+                <p class="text-slate-600 font-medium">Canal de comunicación directo con nuestro Head Coach y equipo pedagógico. Tutorías 1 a 1.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Visual Dashboard Mockup -->
+        <div class="lg:w-1/2 w-full relative">
+          <div class="absolute inset-0 bg-slate-200 transform -rotate-3 rounded-sm"></div>
+          <div class="relative bg-white border-4 border-slate-900 p-6 shadow-[8px_8px_0px_rgba(15,23,42,1)]">
+            <div class="flex items-center justify-between mb-6 border-b-2 border-slate-100 pb-4">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 bg-slate-900 flex items-center justify-center text-white font-black text-xl italic skew-x-[-10deg]">
+                  <span class="skew-x-[10deg]">ML</span>
+                </div>
+                <div>
+                  <h5 class="font-black text-slate-900 uppercase italic">Marcos López</h5>
+                  <p class="text-xs font-bold text-slate-500 uppercase tracking-wide">15 años • Programa 360</p>
+                </div>
+              </div>
+              <span class="px-3 py-1 bg-green-100 text-green-700 text-xs font-black uppercase tracking-wider border-2 border-green-700 skew-x-[-10deg]">
+                <span class="skew-x-[10deg] block">Óptimo</span>
+              </span>
+            </div>
+            
+            <div class="space-y-6">
+              <div>
+                <div class="flex justify-between text-sm font-bold mb-2 uppercase tracking-wide">
+                  <span class="text-slate-700">Asistencia Física</span>
+                  <span class="text-orange-600">95%</span>
+                </div>
+                <div class="w-full bg-slate-100 h-3 border border-slate-300">
+                  <div class="bg-orange-500 h-full w-[95%]"></div>
+                </div>
+              </div>
+              
+              <div>
+                <div class="flex justify-between text-sm font-bold mb-2 uppercase tracking-wide">
+                  <span class="text-slate-700">Objetivos Escolares</span>
+                  <span class="text-slate-900">Superados</span>
+                </div>
+                <div class="w-full bg-slate-100 h-3 border border-slate-300">
+                  <div class="bg-slate-900 h-full w-[100%]"></div>
+                </div>
+              </div>
+              
+              <div class="bg-slate-50 border-2 border-slate-200 p-4 flex gap-4 items-start">
+                <i data-lucide="star" class="text-orange-500 mt-1 w-5 h-5"></i>
+                <div>
+                  <h6 class="text-sm font-black italic uppercase text-slate-900">Reporte Académico:</h6>
+                  <p class="text-sm text-slate-600 font-medium mt-1">Marcos completó todos sus deberes de matemáticas tras el entreno. Su nivel de concentración ha subido un 40%.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing/Subscription Section -->
+    <section id="planes" class="py-24 px-6 bg-orange-500 relative overflow-hidden">
+      <!-- Background graphics -->
+      <div class="absolute inset-0 opacity-10">
+         <div class="w-full h-full" style="background-image: radial-gradient(#000 2px, transparent 2px); background-size: 30px 30px;"></div>
+      </div>
+      
+      <div class="max-w-4xl mx-auto text-center relative z-10">
+        <h2 class="text-4xl md:text-6xl font-black uppercase italic tracking-tight text-white mb-6">Invierte en su Futuro</h2>
+        <p class="text-orange-100 font-medium text-lg mb-12 max-w-2xl mx-auto">El compromiso requiere continuidad. Un sistema por suscripción que garantiza la transformación física y mental durante todo el curso escolar.</p>
+        
+        <div class="bg-white border-4 border-slate-900 p-8 md:p-12 shadow-[16px_16px_0px_rgba(15,23,42,1)] transform rotate-1">
+          
+          <div class="flex flex-col md:flex-row items-center justify-between gap-8 transform -rotate-1">
+            <div class="text-left flex-1">
+              <div class="inline-block px-4 py-1.5 bg-slate-900 text-white text-xs font-black uppercase tracking-widest mb-4 skew-x-[-10deg]">
+                <span class="skew-x-[10deg] block">Membresía Oficial</span>
+              </div>
+              <h3 class="text-4xl font-black italic uppercase text-slate-900 mb-2">Programa 360</h3>
+              <p class="text-slate-600 font-medium mb-8">Acceso ilimitado al centro de alto rendimiento adolescente: entreno, estudio y mentoría.</p>
+              
+              <ul class="space-y-4">
+                <li class="flex items-center gap-3 text-slate-700 font-bold">
+                  <div class="w-6 h-6 bg-orange-100 flex items-center justify-center shrink-0 rounded-full">
+                    <i data-lucide="target" class="text-orange-600 w-[14px] h-[14px]"></i>
+                  </div>
+                  Entrenamiento adaptado (12-18 años)
+                </li>
+                <li class="flex items-center gap-3 text-slate-700 font-bold">
+                  <div class="w-6 h-6 bg-orange-100 flex items-center justify-center shrink-0 rounded-full">
+                    <i data-lucide="target" class="text-orange-600 w-[14px] h-[14px]"></i>
+                  </div>
+                  Acceso libre a aula de estudio supervisada
+                </li>
+                <li class="flex items-center gap-3 text-slate-700 font-bold">
+                  <div class="w-6 h-6 bg-orange-100 flex items-center justify-center shrink-0 rounded-full">
+                    <i data-lucide="target" class="text-orange-600 w-[14px] h-[14px]"></i>
+                  </div>
+                  Educador y Coach en sala siempre
+                </li>
+                <li class="flex items-center gap-3 text-slate-700 font-bold">
+                  <div class="w-6 h-6 bg-orange-100 flex items-center justify-center shrink-0 rounded-full">
+                    <i data-lucide="target" class="text-orange-600 w-[14px] h-[14px]"></i>
+                  </div>
+                  Reporte y tutoría mensual con la familia
+                </li>
+                <li class="flex items-center gap-3 text-slate-700 font-bold">
+                  <div class="w-6 h-6 bg-orange-100 flex items-center justify-center shrink-0 rounded-full">
+                    <i data-lucide="target" class="text-orange-600 w-[14px] h-[14px]"></i>
+                  </div>
+                  App exclusiva de métricas
+                </li>
+              </ul>
+            </div>
+            
+            <div class="w-full md:w-auto bg-slate-50 border-2 border-slate-200 p-8 text-center shrink-0">
+              <p class="text-slate-500 text-sm font-bold uppercase tracking-widest mb-2">Cuota mensual desde</p>
+              <div class="flex items-end justify-center gap-1 mb-6">
+                <span class="text-7xl font-black italic text-slate-900 leading-none">120</span>
+                <span class="text-2xl font-bold text-slate-500 mb-1">€</span>
+              </div>
+              <button class="w-full py-4 bg-orange-500 text-white font-black text-lg uppercase italic tracking-wide hover:bg-slate-900 transition-colors shadow-[4px_4px_0px_rgba(15,23,42,1)] hover:shadow-none hover:translate-y-[4px] hover:translate-x-[4px]">
+                Solicitar Plaza
+              </button>
+              <p class="text-xs text-slate-400 font-bold mt-4 uppercase">*Matrícula inicial no incluida.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-950 pt-16 pb-8 px-6 text-slate-400">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+      <div class="col-span-1 md:col-span-2">
+        <div class="flex items-center gap-2 mb-6">
+          <div class="w-10 h-10 bg-slate-800 flex items-center justify-center text-xl font-black italic text-orange-500">
+            B
+          </div>
+          <span class="text-2xl font-black italic tracking-tighter text-white uppercase">
+            BalanZ
+          </span>
+        </div>
+        <p class="text-sm font-medium leading-relaxed max-w-sm text-slate-400">
+          Centro de alto rendimiento para adolescentes. Convertimos la energía de la juventud en disciplina, notas y desarrollo personal.
+        </p>
+      </div>
+      <div>
+        <h4 class="text-white font-black italic uppercase tracking-wider mb-4">La Academia</h4>
+        <ul class="space-y-3 text-sm font-bold">
+          <li><a href="#" class="hover:text-orange-500 transition-colors">El Método</a></li>
+          <li><a href="#" class="hover:text-orange-500 transition-colors">Campus de Verano</a></li>
+          <li><a href="#" class="hover:text-orange-500 transition-colors">Convenios AMPAs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-black italic uppercase tracking-wider mb-4">Contacto</h4>
+        <ul class="space-y-3 text-sm font-bold">
+          <li>alianzas@balanz.es</li>
+          <li>hola@balanz.es</li>
+          <li class="mt-6 flex gap-4">
+            <a href="https://www.instagram.com/nachocaballeroo" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-slate-800 flex items-center justify-center text-white hover:bg-orange-500 hover:text-white transition-colors skew-x-[-10deg]">
+              <i data-lucide="instagram" class="skew-x-[10deg] w-5 h-5"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-6xl mx-auto text-center text-xs font-bold uppercase tracking-widest text-slate-600 border-t border-slate-800 pt-8">
+      © <span id="year">2026</span> BalanZ by Nacho Caballero. Todos los derechos reservados.
+    </div>
+  </footer>
+
+  <!-- Scripts para interacciones -->
+  <script>
+    // 1. Inicializar iconos de Lucide
+    lucide.createIcons();
+
+    // 2. Lógica para el fondo del menú de navegación (Scroll)
+    const navbar = document.getElementById('navbar');
+    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('bg-white/95', 'backdrop-blur-md', 'border-b', 'border-slate-200', 'py-4', 'shadow-sm');
+        navbar.classList.remove('bg-transparent', 'py-6');
+      } else {
+        navbar.classList.add('bg-transparent', 'py-6');
+        navbar.classList.remove('bg-white/95', 'backdrop-blur-md', 'border-b', 'border-slate-200', 'py-4', 'shadow-sm');
+      }
+    });
+
+    // 3. Obtener el año actual dinámicamente para el footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
