@@ -86,7 +86,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
                 <div class="flex-shrink-0 flex items-center">
-                    <img class="h-10 w-auto" src="Casen-Recordati-Logo-400x196-1.png" alt="Casen Recordati">
+                    <img class="h-10 w-auto" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Recordati_logo.svg/1024px-Recordati_logo.svg.png" alt="Casen Recordati">
                 </div>
                 <div class="hidden sm:flex space-x-8 items-center">
                     <span class="text-sm font-semibold text-gray-500 uppercase tracking-wider"><i class="fa-solid fa-plane-departure mr-2 text-casen-red"></i> Vuelo CR-2026</span>
@@ -110,7 +110,7 @@
                     El viaje del <span class="text-casen-red">líder Casen</span>
                 </h1>
                 <p class="mt-3 text-lg text-gray-300 sm:text-xl max-w-xl">
-                    Tu cuaderno de bitácora digital. Aquí encontrarás tu itinerario, detalles de vuelo y los materiales que iremos desbloqueando tras cada destino. Prepárate para liderar con propósito.
+                    Tu cuaderno de bitácora digital. Aquí encontrarás tu itinerario, los detalles de vuelo y los materiales que iremos desbloqueando tras cada destino. Prepárate para liderar con propósito.
                 </p>
                 
                 <!-- Logistics Boarding Pass Info -->
@@ -127,8 +127,8 @@
                         </div>
                         <div>
                             <p class="text-xs text-gray-400 uppercase">Ubicación</p>
-                            <p class="font-bold text-casen-dark text-lg"><i class="fa-solid fa-map-pin text-casen-red mr-1"></i> En Planta</p>
-                            <p class="text-sm text-gray-500 italic">Sala principal de formación</p>
+                            <p class="font-bold text-casen-dark text-lg"><i class="fa-solid fa-users text-casen-red mr-1"></i> Presencial</p>
+                            <p class="text-sm text-gray-500 italic">En planta (Sala de formación)</p>
                         </div>
                     </div>
                 </div>
@@ -140,7 +140,7 @@
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div class="text-center mb-16">
             <h2 class="text-3xl font-extrabold text-casen-dark sm:text-4xl">Itinerario de <span class="text-casen-red">Destinos</span></h2>
-            <p class="mt-4 text-lg text-gray-500">Los materiales y misiones se irán desbloqueando conforme completemos cada etapa.</p>
+            <p class="mt-4 text-lg text-gray-500">La información y los materiales se irán revelando conforme nos acerquemos a cada etapa.</p>
         </div>
 
         <div class="relative relative-timeline" id="timeline-container">
@@ -152,160 +152,174 @@
     <!-- Footer -->
     <footer class="bg-casen-dark py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <img class="h-8 w-auto mx-auto mb-4 filter brightness-0 invert opacity-50" src="Casen-Recordati-Logo-400x196-1.png" alt="Casen Recordati">
+            <img class="h-8 w-auto mx-auto mb-4 filter brightness-0 invert opacity-50" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Recordati_logo.svg/1024px-Recordati_logo.svg.png" alt="Casen Recordati">
             <p class="text-gray-400 text-sm">© 2026 Casen Recordati. Todos los derechos reservados. Programa El viaje del líder Casen.</p>
         </div>
     </footer>
 
     <!-- WIDGET SIMULADOR DE TIEMPO (Solo para la demo) -->
     <div class="fixed bottom-4 right-4 bg-white p-4 rounded-lg shadow-2xl border border-gray-200 z-50 w-72">
-        <h4 class="text-xs font-bold text-casen-red uppercase mb-2"><i class="fa-solid fa-flask"></i> Panel Demo Mágico</h4>
-        <p class="text-xs text-gray-600 mb-3">Simula el paso del tiempo para ver cómo se desbloquean los materiales y misiones de la web.</p>
+        <h4 class="text-xs font-bold text-casen-red uppercase mb-2"><i class="fa-solid fa-flask"></i> Panel de Control (Demo)</h4>
+        <p class="text-xs text-gray-600 mb-3">Cambia la fecha para ver cómo la web revela contenido automáticamente.</p>
         <select id="timeSimulator" class="w-full text-sm border-gray-300 rounded-md shadow-sm focus:border-casen-red focus:ring focus:ring-casen-red focus:ring-opacity-50 bg-gray-50 p-2">
-            <option value="2026-03-30">Hoy (30 Marzo) - Antes de empezar</option>
-            <option value="2026-04-12">12 Abril - ¡Misión activa (Test)!</option>
-            <option value="2026-04-23">23 Abril - 1ª Sesión completada</option>
-            <option value="2026-06-18">18 Junio - 3ª Sesión completada</option>
-            <option value="2026-11-05">5 Nov - Viaje finalizado</option>
+            <option value="2026-04-07">7 Abril - Correo 1 (Todo oculto)</option>
+            <option value="2026-04-10">10 Abril - Correo 2 (Se revela misión)</option>
+            <option value="2026-04-20">20 Abril - Pistoletazo de salida</option>
+            <option value="2026-04-23">23 Abril - Sesión 1 completada</option>
+            <option value="2026-06-18">18 Junio - Sesión 3 completada</option>
         </select>
     </div>
 
     <!-- Lógica JavaScript -->
     <script>
-        // Datos de las sesiones extraídos del prompt y añadida la misión previa
+        // Datos de las sesiones. 'revealDate' controla cuándo se desvela la información.
         const sessions = [
             { 
                 id: 0, 
-                date: '2026-04-17', 
+                revealDate: '2026-04-10', // Fecha en la que se descubre el misterio
+                date: '2026-04-17', // Fecha límite
                 title: 'Test de Fortaleza Emocional (FORTIA)', 
-                speaker: 'Requisito pre-vuelo', 
+                secretTitle: 'Misión Pre-vuelo [CLASIFICADA]',
+                speaker: 'Requisito obligatorio', 
                 icon: 'fa-brain',
+                secretIcon: 'fa-user-secret',
                 isTask: true,
-                link: 'https://gimnasio-emocional.com/test-de-fortaleza-emocional/'
+                description: 'La información sobre este destino está actualmente encriptada. Vuelve a revisar tu itinerario más adelante.'
             },
-            { id: 1, date: '2026-04-22', title: 'Gestión del cambio', speaker: 'Rocío Desanpio', icon: 'fa-shuffle' },
-            { id: 2, date: '2026-05-20', title: 'Autoconocimiento', speaker: 'Domenica Ardizzone', icon: 'fa-user-astronaut' },
-            { id: 3, date: '2026-06-17', title: 'Liderazgo con Propósito', speaker: 'Jorge Maza', icon: 'fa-bullseye' },
-            { id: 4, date: '2026-09-09', title: 'Gestión del tiempo', speaker: 'Rocio Desanpio', icon: 'fa-hourglass-half' },
-            { id: 5, date: '2026-10-07', title: 'Líder colaborativo', speaker: 'Jorge Maza', icon: 'fa-users-rays' },
-            { id: 6, date: '2026-11-04', title: 'Comunicación asertiva', speaker: 'Domenica Ardizzone', icon: 'fa-comments' }
+            { id: 1, revealDate: '2026-04-01', date: '2026-04-22', title: 'Gestión del cambio', speaker: 'Rocío Desanpio', icon: 'fa-shuffle' },
+            { id: 2, revealDate: '2026-04-01', date: '2026-05-20', title: 'Autoconocimiento', speaker: 'Domenica Ardizzone', icon: 'fa-user-astronaut' },
+            { id: 3, revealDate: '2026-04-01', date: '2026-06-17', title: 'Liderazgo con Propósito', speaker: 'Jorge Maza', icon: 'fa-bullseye' },
+            { id: 4, revealDate: '2026-04-01', date: '2026-09-09', title: 'Gestión del tiempo', speaker: 'Rocio Desanpio', icon: 'fa-hourglass-half' },
+            { id: 5, revealDate: '2026-04-01', date: '2026-10-07', title: 'Líder colaborativo', speaker: 'Jorge Maza', icon: 'fa-users-rays' },
+            { id: 6, revealDate: '2026-04-01', date: '2026-11-04', title: 'Comunicación asertiva', speaker: 'Domenica Ardizzone', icon: 'fa-comments' }
         ];
 
-        // Función para parsear fecha YYYY-MM-DD a formato español
         function formatDate(dateStr, isTask) {
             const options = { day: 'numeric', month: 'long' };
             const date = new Date(dateStr);
             const formattedDate = date.toLocaleDateString('es-ES', options);
             if (isTask) {
-                return `Hasta el ${formattedDate} (23:59h)`;
+                return `Límite: ${formattedDate}`;
             }
             return formattedDate;
         }
 
-        // Función principal para renderizar el itinerario basándose en una fecha "actual"
         function renderItinerary(currentDateObj) {
             const container = document.getElementById('timeline-container');
-            container.innerHTML = '<div class="timeline-line"></div>'; // Reset
+            container.innerHTML = '<div class="timeline-line"></div>'; 
 
             let nextSessionFound = false;
 
             sessions.forEach((session, index) => {
                 const sessionDate = new Date(session.date);
+                const revealDate = new Date(session.revealDate);
                 
-                // Si es la tarea previa, la fecha límite es a las 23:59. Las sesiones presenciales a las 16:30.
                 if (session.isTask) {
                     sessionDate.setHours(23, 59, 59); 
                 } else {
                     sessionDate.setHours(16, 30, 0); 
                 }
                 
-                let status = ''; // 'past', 'next', 'future'
-                
+                // ¿Se ha desvelado ya esta tarjeta según la fecha actual?
+                const isRevealed = currentDateObj >= revealDate;
+
+                let status = ''; 
                 if (currentDateObj > sessionDate) {
                     status = 'past';
-                } else if (!nextSessionFound) {
+                } else if (!nextSessionFound && isRevealed) {
                     status = 'next';
                     nextSessionFound = true;
                 } else {
                     status = 'future';
                 }
 
-                // Determinar estilos según estado
                 const isPast = status === 'past';
                 const isNext = status === 'next';
                 const isFuture = status === 'future';
 
-                const dotColor = isPast ? 'bg-green-500' : (isNext ? 'bg-casen-red animate-pulse' : 'bg-gray-300');
-                const dotIcon = isPast ? 'fa-check text-white' : (isNext ? (session.isTask ? 'fa-exclamation text-white' : 'fa-plane text-white') : 'fa-lock text-gray-500');
-                
-                const cardOpacity = isFuture ? 'opacity-60 grayscale' : 'opacity-100';
-                const cardBorder = isNext ? 'border-2 border-casen-red shadow-xl scale-105 transform transition' : 'border border-gray-200 shadow-md';
-                const highlightBadge = isNext ? (session.isTask ? 'MISIÓN ACTIVA' : 'SIGUIENTE DESTINO') : '';
-                
-                // HTML del Botón de Materiales o Tareas
-                let actionHTML = '';
-                
-                if (session.isTask) {
-                    // Lógica para el Test FORTIA
+                // Estilos visuales
+                let dotColor = 'bg-gray-300';
+                let dotIcon = 'fa-lock text-gray-500';
+                let cardOpacity = 'opacity-60 grayscale';
+                let cardBorder = 'border border-gray-200 shadow-md';
+                let highlightBadge = '';
+
+                if (isRevealed) {
                     if (isPast) {
-                        actionHTML = `
-                            <div class="mt-4 pt-4 border-t border-gray-100">
-                                <span class="inline-flex items-center text-sm text-gray-500 font-semibold">
-                                    <i class="fa-solid fa-lock mr-2"></i> Plazo de misión finalizado
-                                </span>
-                            </div>`;
-                    } else {
-                        actionHTML = `
-                            <div class="mt-4 pt-4 border-t border-gray-100">
-                                <a href="${session.link}" target="_blank" class="inline-block text-sm bg-casen-red hover:bg-red-700 text-white py-2 px-4 rounded transition font-medium shadow-md">
-                                    <i class="fa-solid fa-pen-to-square mr-1"></i> Realizar Test FORTIA
-                                </a>
-                            </div>`;
-                    }
-                } else {
-                    // Lógica para Sesiones normales
-                    if (isPast) {
-                        actionHTML = `
-                            <div class="mt-4 pt-4 border-t border-gray-100 flex gap-2">
-                                <button onclick="alert('Descargando Resumen Ejecutivo: ${session.title}')" class="text-sm bg-gray-100 hover:bg-gray-200 text-gray-700 py-2 px-3 rounded transition font-medium">
-                                    <i class="fa-solid fa-file-pdf text-red-500 mr-1"></i> Resumen
-                                </button>
-                                <button onclick="alert('Descargando Herramientas de ${session.speaker}')" class="text-sm bg-gray-100 hover:bg-gray-200 text-gray-700 py-2 px-3 rounded transition font-medium">
-                                    <i class="fa-solid fa-toolbox text-blue-500 mr-1"></i> Toolkit
-                                </button>
-                            </div>`;
+                        dotColor = 'bg-green-500';
+                        dotIcon = 'fa-check text-white';
+                        cardOpacity = 'opacity-100';
                     } else if (isNext) {
-                        actionHTML = `
-                            <div class="mt-4 pt-4 border-t border-gray-100">
-                                <span class="inline-flex items-center text-sm text-casen-red font-semibold">
-                                    <i class="fa-solid fa-spinner fa-spin mr-2"></i> Preparando despegue...
-                                </span>
-                            </div>`;
+                        dotColor = 'bg-casen-red animate-pulse';
+                        dotIcon = session.isTask ? 'fa-exclamation text-white' : 'fa-plane text-white';
+                        cardOpacity = 'opacity-100';
+                        cardBorder = 'border-2 border-casen-red shadow-xl scale-105 transform transition';
+                        highlightBadge = session.isTask ? 'ACCIÓN REQUERIDA' : 'SIGUIENTE DESTINO';
+                    } else {
+                        dotIcon = session.icon + ' text-gray-500';
                     }
                 }
 
-                // Construcción de la tarjeta (Desktop alterno, móvil izquierda)
+                // Títulos condicionales (si está oculto, mostramos el secreto)
+                const displayTitle = isRevealed ? session.title : (session.secretTitle || 'Destino Oculto');
+                const displayIcon = isRevealed ? session.icon : (session.secretIcon || 'fa-eye-slash');
+                
+                // HTML del Botón / Información extra
+                let actionHTML = '';
+                
+                if (isRevealed) {
+                    if (session.isTask) {
+                        if (isPast) {
+                            actionHTML = `
+                                <div class="mt-4 pt-4 border-t border-gray-100">
+                                    <span class="inline-flex items-center text-sm text-gray-500 font-semibold">
+                                        <i class="fa-solid fa-lock mr-2"></i> Plazo finalizado
+                                    </span>
+                                </div>`;
+                        } else {
+                            // En lugar de un botón directo al test, anunciamos que lo tienen que hacer (como solicitaste)
+                            actionHTML = `
+                                <div class="mt-4 pt-4 border-t border-casen-red border-opacity-30 bg-red-50 p-3 rounded text-sm text-casen-dark">
+                                    <strong><i class="fa-solid fa-circle-info text-casen-red mr-1"></i> Instrucciones:</strong> Has recibido un correo electrónico con tu acceso personal para realizar el Test FORTIA. Por favor, asegúrate de completarlo antes del 17 de abril.
+                                </div>`;
+                        }
+                    } else {
+                        if (isPast) {
+                            actionHTML = `
+                                <div class="mt-4 pt-4 border-t border-gray-100 flex gap-2">
+                                    <button class="text-sm bg-gray-100 hover:bg-gray-200 text-gray-700 py-2 px-3 rounded transition font-medium">
+                                        <i class="fa-solid fa-file-pdf text-red-500 mr-1"></i> Descargar Resumen
+                                    </button>
+                                </div>`;
+                        }
+                    }
+                } else if (session.isTask) {
+                    // Texto cuando la tarjeta aún es secreta
+                    actionHTML = `
+                        <div class="mt-4 pt-4 border-t border-gray-100">
+                            <p class="text-sm text-gray-500 italic">${session.description}</p>
+                        </div>`;
+                }
+
                 const itemHTML = `
                     <div class="relative z-10 timeline-item mb-12 sm:mb-16 w-full flex flex-col md:block">
-                        <!-- Icono central -->
                         <div class="absolute left-[24px] md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full ${dotColor} border-4 border-white shadow z-20 timeline-icon">
                             <i class="fa-solid ${dotIcon}"></i>
                         </div>
                         
-                        <!-- Contenido -->
                         <div class="timeline-content ml-16 md:ml-0 w-[calc(100%-4rem)] md:w-full">
-                            <div class="bg-white rounded-xl p-6 ${cardBorder} ${cardOpacity} relative hover:shadow-lg transition-shadow duration-300">
+                            <div class="bg-white rounded-xl p-6 ${cardBorder} ${cardOpacity} relative transition-all duration-300">
                                 
-                                ${isNext ? `<div class="absolute -top-3 right-4 bg-casen-red text-white text-xs font-bold px-2 py-1 rounded shadow">${highlightBadge}</div>` : ''}
+                                ${highlightBadge ? `<div class="absolute -top-3 right-4 bg-casen-red text-white text-xs font-bold px-2 py-1 rounded shadow">${highlightBadge}</div>` : ''}
                                 
                                 <div class="flex items-center justify-between mb-2">
-                                    <span class="text-sm font-bold ${session.isTask ? 'text-casen-red' : 'text-gray-400'} uppercase tracking-wide">
-                                        <i class="${session.isTask ? 'fa-solid fa-stopwatch' : 'fa-regular fa-calendar'} mr-1"></i> ${formatDate(session.date, session.isTask)}
+                                    <span class="text-sm font-bold ${session.isTask && isRevealed ? 'text-casen-red' : 'text-gray-400'} uppercase tracking-wide">
+                                        <i class="${session.isTask ? 'fa-solid fa-stopwatch' : 'fa-regular fa-calendar'} mr-1"></i> ${isRevealed ? formatDate(session.date, session.isTask) : 'PRÓXIMAMENTE'}
                                     </span>
-                                    <i class="fa-solid ${session.icon} text-2xl text-gray-200"></i>
+                                    <i class="fa-solid ${displayIcon} text-2xl text-gray-200"></i>
                                 </div>
-                                <h3 class="text-xl font-bold text-casen-dark mb-1">${session.title}</h3>
-                                <p class="text-sm text-gray-600"><i class="fa-solid ${session.isTask ? 'fa-clipboard-check' : 'fa-user-tie'} mr-1 text-gray-400"></i> ${session.isTask ? 'Importante:' : 'Piloto:'} <strong>${session.speaker}</strong></p>
+                                <h3 class="text-xl font-bold text-casen-dark mb-1">${displayTitle}</h3>
+                                ${isRevealed ? `<p class="text-sm text-gray-600"><i class="fa-solid ${session.isTask ? 'fa-clipboard-check' : 'fa-user-tie'} mr-1 text-gray-400"></i> ${session.isTask ? 'Requisito:' : 'Piloto:'} <strong>${session.speaker}</strong></p>` : ''}
                                 
                                 ${actionHTML}
                             </div>
@@ -317,16 +331,12 @@
             });
         }
 
-        // Inicializar con la fecha del simulador (o la fecha real si quisieras: new Date())
+        // Inicialización
         const simulator = document.getElementById('timeSimulator');
-        
-        // Render inicial
         renderItinerary(new Date(simulator.value));
 
-        // Listener para cuando el usuario cambia la fecha en el simulador
         simulator.addEventListener('change', (e) => {
             const selectedDate = new Date(e.target.value);
-            // Añadimos hora para que sea a mitad de día y los cálculos funcionen
             selectedDate.setHours(12, 0, 0); 
             renderItinerary(selectedDate);
         });
